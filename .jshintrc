@@ -1,0 +1,12 @@
+{
+    "esnext": true,
+    "indent": 4,
+    "globals": {
+        "React": true,
+        "require": true,
+        "__dirname": true,
+        "module": true,
+        "process": true,
+        "console": true
+    }
+}

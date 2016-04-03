@@ -1,0 +1,81 @@
+// =======================
+// wrapper for columns
+// =======================
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: floor(($gutter-width / -2));
+    margin-left: ceil(($gutter-width / -2));
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+// =======================
+// columns' common styles
+// =======================
+@each $item, $val in $breakpoints {
+    @for $i from 1 through $grid-columns {
+        .col-#{$item}-#{$i} {
+            flex: 0 0 auto;
+            padding-right: floor(($gutter-width / 2));
+            padding-left: ceil(($gutter-width / 2));
+        }
+    }
+}
+
+// column sizes
+@each $item, $val in $breakpoints {
+
+    // each screen breakpoint
+    @media (min-width: #{$val}) {
+
+        // loop for each colum in $grid-columns
+        @for $i from 1 through $grid-columns {
+
+            .col-#{$item}-#{$i} {
+                flex-basis: percentage($i / $grid-columns);
+                max-width: percentage($i / $grid-columns);
+            }
+
+        }
+
+    }
+
+}
+
+// =======================
+// alignments
+// =======================
+// horizontal
+.justify-start {
+    justify-content: flex-start;
+    text-align: start;
+}
+
+.justify-center {
+    justify-content: center;
+    text-align: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+    text-align: end;
+}
+
+// vertical
+.align-start {
+    align-items: flex-start;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}

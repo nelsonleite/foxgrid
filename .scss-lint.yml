@@ -1,0 +1,19 @@
+linters:
+  Indentation:
+    severity: info
+    width: 4
+  DeclarationOrder:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  EmptyLineBetweenBlocks:
+    enabled: false
+  SelectorFormat:
+    convention: 'BEM'
+    enabled: false
+  NameFormat:
+    enabled: false
+  PlaceholderInExtend:
+    enabled: false
+  PseudoElement:
+    enabled: false
