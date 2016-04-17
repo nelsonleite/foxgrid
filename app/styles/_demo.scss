@@ -6,12 +6,6 @@ body {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding-right: floor(($gutter-width / 2));
-    padding-left: ceil(($gutter-width / 2));
-}
-
-[class*='col-'] {
-    min-height: 40px;
-    color: steelblue;
-    border: 1px solid steelblue;
+    padding-right: floor(($gutter / 2));
+    padding-left: ceil(($gutter / 2));
 }
