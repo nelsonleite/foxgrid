@@ -9,3 +9,32 @@ body {
     padding-right: floor(($gutter / 2));
     padding-left: ceil(($gutter / 2));
 }
+
+pre {
+    display: block;
+    padding: $gutter / 2;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #fafafa;
+    border: 1px solid #bbb;
+
+    .comment {
+        color: #bbb;
+    }
+}
+
+.row {
+    margin-bottom: $gutter / 2;
+}
+
+[class*='col-'] {
+    .inner {
+        min-height: $gutter;
+        color: #fff;
+        background-color: cadetblue;
+    }
+}

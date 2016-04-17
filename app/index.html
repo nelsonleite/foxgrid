@@ -13,10 +13,103 @@
 <body>
 
     <div class="container">
+        <h1>Breakponits</h1>
+        <p>
+            Flexbox has 6 breakopints by default
+        </p>
+        <pre><code>$breakpoints: (
+    xxs: '', <span class="comment">// default</span>
+    xs: '640px',
+    sm: '768px',
+    md: '992px',
+    lg: '1200px',
+    xl: '1600px'
+);</code></pre>
+        <p>
+            Which can be used with the following media queries:
+        </p>
+        <pre><code><span class="comment">/* Extra extra small devices (less than 640px)
+No media query since this is the default */</span>
+
+<span class="comment">/* extra small devices (640+ px)</span>
+@media (min-width: map-get($breakpoints, xs) { ... }
+
+<span class="comment">/* small devices (tablet in portrait, 768+ px)</span>
+@media (min-width: map-get($breakpoints, sm) { ... }
+
+<span class="comment">/* medium devices (small desktops, tablet in landscape, 992+ px)</span>
+@media (min-width: map-get($breakpoints, md) { ... }
+        </code></pre>
+    </div>
+
+    <div class="container">
         <h1>Basic grid</h1>
 
+        <!-- 12 -->
         <div class="row">
-            <div class="aaa col-xxs-12 col-sm-12">1</div>
+            <div class="col-xxs-12">
+                <div class="inner">col-12</div>
+            </div>
+        </div>
+
+        <!-- 1-11 -->
+        <div class="row">
+            <div class="col-xxs-1">
+                <div class="inner">col-1</div>
+            </div>
+            <div class="col-xxs-11">
+                <div class="inner">col-11</div>
+            </div>
+        </div>
+
+        <!-- 2-10 -->
+        <div class="row">
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+            <div class="col-xxs-10">
+                <div class="inner">col-10</div>
+            </div>
+        </div>
+
+        <!-- 3-9 -->
+        <div class="row">
+            <div class="col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+            <div class="col-xxs-9">
+                <div class="inner">col-9</div>
+            </div>
+        </div>
+
+        <!-- 4-8 -->
+        <div class="row">
+            <div class="col-xxs-4">
+                <div class="inner">col-4</div>
+            </div>
+            <div class="col-xxs-8">
+                <div class="inner">col-8</div>
+            </div>
+        </div>
+
+        <!-- 5-7 -->
+        <div class="row">
+            <div class="col-xxs-5">
+                <div class="inner">col-5</div>
+            </div>
+            <div class="col-xxs-7">
+                <div class="inner">col-7</div>
+            </div>
+        </div>
+
+        <!-- 6-6 -->
+        <div class="row">
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
         </div>
     </div>
 
