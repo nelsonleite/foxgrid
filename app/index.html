@@ -13,9 +13,9 @@
 <body>
 
     <div class="container">
-        <h1>Breakponits</h1>
+        <h1>Breakpoints</h1>
         <p>
-            Flexbox has 6 breakopints by default
+            Flexbox has 6 breakpoints by default
         </p>
         <pre><code>$breakpoints: (
     xxs: '', <span class="comment">// default</span>
@@ -39,6 +39,12 @@ No media query since this is the default */</span>
 
 <span class="comment">/* medium devices (small desktops, tablet in landscape, 992+ px)</span>
 @media (min-width: map-get($breakpoints, md) { ... }
+
+<span class="comment">/* large devices (desktops, laptops, 1200+ px)</span>
+@media (min-width: map-get($breakpoints, lg) { ... }
+
+<span class="comment">/* extra large devices (large desktops, 1600+ px)</span>
+@media (min-width: map-get($breakpoints, xl) { ... }
         </code></pre>
     </div>
 

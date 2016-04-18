@@ -32,8 +32,21 @@ $list: remove-nth($list, 1);
 //
 #{$list} {
     flex: 0 0 auto;
-    padding-right: floor(($gutter / 2));
-    padding-left: ceil(($gutter / 2));
+    // padding-right: floor(($gutter / 2));
+    // padding-left: ceil(($gutter / 2));
+
+    @each $breakpoint, $val in $breakpoints {
+        @if $val == '' {
+            padding-right: floor((map-get($gutterMap, #{$breakpoint}) / 2)) + px;
+            padding-left: ceil((map-get($gutterMap, #{$breakpoint}) / 2)) + px;
+        }
+        @else {
+            @media (min-width: #{$val}) {
+                padding-right: floor((map-get($gutterMap, #{$breakpoint}) / 2)) + px;
+                padding-left: ceil((map-get($gutterMap, #{$breakpoint}) / 2)) + px;
+            }
+        }
+    }
 }
 
 //
