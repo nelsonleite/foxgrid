@@ -1,9 +1,6 @@
 // how many columns in the grid
 $grid-columns: 12 !default;
 
-// gutter between columns (half for left and right)
-$gutter: 30px !default;
-
 // screen breakpoints
 $breakpoints: (
     xxs: '',
@@ -23,3 +20,11 @@ $gutterMap: (
     lg: 30,
     xl: 30
 );
+
+// helper vars for each gutter
+$gutter_xxs: map-get($gutterMap, xxs);
+$gutter_xs: map-get($gutterMap, xs);
+$gutter_sm: map-get($gutterMap,sm);
+$gutter_md: map-get($gutterMap, md);
+$gutter_lg: map-get($gutterMap, lg);
+$gutter_xl: map-get($gutterMap, xl);

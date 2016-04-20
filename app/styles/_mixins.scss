@@ -1,4 +1,9 @@
-// Removing list value at index n
+/**
+ * Removing list value at nth index
+ * @param  {list} $list  List to remove the item
+ * @param  {list} $index Index for the item to be removed
+ * @return {list}        List with the item removed
+ */
 @function remove-nth($list, $index) {
     $result: null;
 
@@ -28,7 +33,10 @@
     @return $result;
 }
 
-// Loop for each column
+/**
+ * Calculate dimensions for each column
+ * @param $breakpoint
+ */
 @mixin calc-grid-column($breakpoint) {
     @for $i from 1 through $grid-columns {
         .col-#{$breakpoint}-#{$i} {
@@ -36,4 +44,15 @@
             max-width: percentage($i / $grid-columns);
         }
     }
+}
+
+/**
+ * Calculate gutter width
+ * @param  $property    Property to apply the value
+ * @param  $breakpoint
+ * @param  $abs         [1, -1] Whether the $property value is positive or negative
+ */
+@mixin calc-column-gutter($property, $breakpoint, $abs: 1) {
+    #{$property}-right: floor(((map-get($gutterMap, #{$breakpoint}) * $abs) / 2)) + px;
+    #{$property}-left: ceil(((map-get($gutterMap, #{$breakpoint}) * $abs) / 2)) + px;
 }

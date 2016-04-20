@@ -6,13 +6,17 @@ body {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding-right: floor(($gutter / 2));
-    padding-left: ceil(($gutter / 2));
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.lead {
+    font-size: 20px;
 }
 
 pre {
     display: block;
-    padding: $gutter / 2;
+    padding: 15px;
     margin: 0 0 10px;
     font-size: 13px;
     line-height: 1.42857143;
@@ -28,14 +32,11 @@ pre {
     }
 }
 
-.row {
-    margin-bottom: $gutter / 2;
-}
-
 [class*='col-'] {
     .inner {
-        min-height: $gutter;
+        min-height: 30px;
         color: #fff;
         background-color: cadetblue;
+        margin-bottom: 15px;
     }
 }

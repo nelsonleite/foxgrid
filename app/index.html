@@ -13,9 +13,14 @@
 <body>
 
     <div class="container">
-        <h1>Breakpoints</h1>
+        <h1>Grid system</h1>
+        <p class="lead">
+            Flexbox is a responsive, fluid, mobile first grid system with 12 columns by default.
+        </p>
+
+        <h2>Breakpoints</h2>
         <p>
-            Flexbox has 6 breakpoints by default
+            Foxgrid has 6 breakpoints by default
         </p>
         <pre><code>$breakpoints: (
     xxs: '', <span class="comment">// default</span>
@@ -49,7 +54,7 @@ No media query since this is the default */</span>
     </div>
 
     <div class="container">
-        <h1>Basic grid</h1>
+        <h2>Basic grid</h2>
 
         <!-- 12 -->
         <div class="row">
@@ -59,7 +64,7 @@ No media query since this is the default */</span>
         </div>
 
         <!-- 1-11 -->
-        <div class="row">
+        <div class="row no-gutter">
             <div class="col-xxs-1">
                 <div class="inner">col-1</div>
             </div>
