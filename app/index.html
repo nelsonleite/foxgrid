@@ -13,16 +13,15 @@
 <body>
 
     <div class="container">
-        <h1>Grid system</h1>
         <p class="lead">
-            Flexbox is a responsive, fluid, mobile first grid system with 12 columns (by default).
+            Foxgrid is a responsive, fluid, mobile first grid system based on the flexbox layout.
         </p>
         <p>
-            Flexbox follows some rules to work properly:
+            Foxgrid follows some rules to work properly:
         </p>
         <ul>
-            <li>Rows must be placed withis a <code class="inline">.container</code>, or if you don't want to use one, just add the class <code class="inline">.no-row-gutter</code></li>
-            <li>Use rows to wrap columns</li>
+            <li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or  just add the class <code class="inline">.no-gutter-row</code></li>
+            <li>Use rows to wrap columns (they're the ones with <code class="inline">display: flex</code>)</li>
         </ul>
         <p>
             And has the following options fully customizable:
@@ -32,7 +31,7 @@
         <p>
             12 columns by default
         </p>
-        <pre><code>$grid-columns: 12 !default;</code></pre>
+        <pre><code><span class="var">$grid-columns:</span> 12 !default;</code></pre>
 
 
         <h2>Breakpoints</h2>
@@ -40,7 +39,7 @@
             6 mobile first breakpoints
         </p>
 
-        <pre><code>$breakpoints: (
+        <pre><code><span class="var">$breakpoints:</span> (
     xxs: '', <span class="comment">// default</span>
     xs: '640px',
     sm: '768px',
@@ -56,26 +55,26 @@
 No media query since this is the default */</span>
 
 <span class="comment">/* extra small devices (640+ px)</span>
-@media (min-width: map-get($breakpoints, xs) { ... }
+<span class="var">@media</span> (min-width: map-get($breakpoints, xs) { ... }
 
 <span class="comment">/* small devices (tablet in portrait, 768+ px)</span>
-@media (min-width: map-get($breakpoints, sm) { ... }
+<span class="var">@media</span> (min-width: map-get($breakpoints, sm) { ... }
 
 <span class="comment">/* medium devices (small desktops, tablet in landscape, 992+ px)</span>
-@media (min-width: map-get($breakpoints, md) { ... }
+<span class="var">@media</span> (min-width: map-get($breakpoints, md) { ... }
 
 <span class="comment">/* large devices (desktops, laptops, 1200+ px)</span>
-@media (min-width: map-get($breakpoints, lg) { ... }
+<span class="var">@media</span> (min-width: map-get($breakpoints, lg) { ... }
 
 <span class="comment">/* extra large devices (large desktops, 1600+ px)</span>
-@media (min-width: map-get($breakpoints, xl) { ... }
+<span class="var">@media</span> (min-width: map-get($breakpoints, xl) { ... }
         </code></pre>
 
         <h2>Guuter per breakpoint</h2>
         <p>
             Custom gutter for each breakpoint
         </p>
-        <pre><code>$gutterMap: (
+        <pre><code><span class="var">$gutterMap:</span> (
     xxs: 10,
     xs:  10,
     sm:  30,
@@ -86,12 +85,12 @@ No media query since this is the default */</span>
         <p>
             and a set of helper vars for standalone usage
         </p>
-        <pre><code>$gutter_xxs: map-get($gutterMap, xxs);
-$gutter_xs : map-get($gutterMap, xs);
-$gutter_sm : map-get($gutterMap, sm);
-$gutter_md : map-get($gutterMap, md);
-$gutter_lg : map-get($gutterMap, lg);
-$gutter_xl : map-get($gutterMap, xl);</code></pre>
+        <pre><code><span class="var">$gutter_xxs:</span> map-get(<span class="var">$gutterMap</span>, xxs);
+<span class="var">$gutter_xs: </span> map-get(<span class="var">$gutterMap</span>, xs);
+<span class="var">$gutter_sm: </span> map-get(<span class="var">$gutterMap</span>, sm);
+<span class="var">$gutter_md: </span> map-get(<span class="var">$gutterMap</span>, md);
+<span class="var">$gutter_lg: </span> map-get(<span class="var">$gutterMap</span>, lg);
+<span class="var">$gutter_xl: </span> map-get(<span class="var">$gutterMap</span>, xl);</code></pre>
     </div>
 
 
