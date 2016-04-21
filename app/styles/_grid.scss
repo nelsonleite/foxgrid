@@ -1,4 +1,20 @@
 // =======================
+// container
+// =======================
+.container {
+    @each $breakpoint, $val in $breakpoints {
+        @if $val == '' {
+            @include calc-column-gutter('padding', $breakpoint);
+        }
+        @else {
+            @media (min-width: #{$val}) {
+                @include calc-column-gutter('padding', $breakpoint);
+            }
+        }
+    }
+}
+
+// =======================
 // wrapper for columns
 // =======================
 .row {
@@ -7,7 +23,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    // margins
+    // gutter margins
     &:not(.no-gutter) {
         @each $breakpoint, $val in $breakpoints {
             @if $val == '' {
@@ -27,6 +43,7 @@
     }
 
     // remove gutter
+    &.no-row-gutter,
     &.no-gutter {
         margin-right: 0;
         margin-left: 0;
