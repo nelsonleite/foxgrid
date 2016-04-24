@@ -66,8 +66,9 @@ $list: remove-nth($list, 1);
 //
 // common styles
 //
-#{$list} {
-    flex: 0 0 auto;
+#{$list},
+.col-auto {
+    flex: 1 0 auto;
 
     @each $breakpoint, $val in $breakpoints {
         @if $val == '' {
@@ -99,8 +100,6 @@ $list: remove-nth($list, 1);
     }
 }
 
-/*
-
 // =======================
 // alignments
 // =======================
@@ -131,4 +130,4 @@ $list: remove-nth($list, 1);
 
 .align-end {
     align-items: flex-end;
-} */
+}

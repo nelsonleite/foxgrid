@@ -4,18 +4,28 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>foxgrid</title>
+    <title>Foxgrid</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
-    <div class="container">
-        <p class="lead">
-            Foxgrid is a responsive, fluid, mobile first grid system based on the flexbox layout.
-        </p>
+    <div class="hero">
+        <div class="row justify-center align-center">
+            <div class="col-xxs-12">
+                <h1>FOXGRID</h1>
+                <p class="lead">
+                    Foxgrid is a responsive, fluid, mobile first grid system based on the flexbox layout.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <article class="container">
         <p>
             Foxgrid follows some rules to work properly:
         </p>
@@ -70,11 +80,11 @@ No media query since this is the default */</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, xl) { ... }
         </code></pre>
 
-        <h2>Guuter per breakpoint</h2>
+        <h2>Gutter per breakpoint</h2>
         <p>
             Custom gutter for each breakpoint
         </p>
-        <pre><code><span class="var">$gutterMap:</span> (
+        <pre><code><span class="var">$gutter-map:</span> (
     xxs: 10,
     xs:  10,
     sm:  30,
@@ -83,87 +93,238 @@ No media query since this is the default */</span>
     xl:  30
 );</code></pre>
         <p>
-            and a set of helper vars for standalone usage
+            and a set of helper variables for standalone usage
         </p>
-        <pre><code><span class="var">$gutter_xxs:</span> map-get(<span class="var">$gutterMap</span>, xxs);
-<span class="var">$gutter_xs: </span> map-get(<span class="var">$gutterMap</span>, xs);
-<span class="var">$gutter_sm: </span> map-get(<span class="var">$gutterMap</span>, sm);
-<span class="var">$gutter_md: </span> map-get(<span class="var">$gutterMap</span>, md);
-<span class="var">$gutter_lg: </span> map-get(<span class="var">$gutterMap</span>, lg);
-<span class="var">$gutter_xl: </span> map-get(<span class="var">$gutterMap</span>, xl);</code></pre>
-    </div>
+        <pre><code><span class="var">$gutter-xxs:</span> map-get(<span class="var">$gutter-map</span>, xxs);
+<span class="var">$gutter-xs: </span> map-get(<span class="var">$gutter-map</span>, xs);
+<span class="var">$gutter-sm: </span> map-get(<span class="var">$gutter-map</span>, sm);
+<span class="var">$gutter-md: </span> map-get(<span class="var">$gutter-map</span>, md);
+<span class="var">$gutter-lg: </span> map-get(<span class="var">$gutter-map</span>, lg);
+<span class="var">$gutter-xl: </span> map-get(<span class="var">$gutter-map</span>, xl);</code></pre>
+    </article>
 
 
-    <div class="container">
-        <h2>Basic grid</h2>
+    <article class="container">
+        <h1>Grid system</h1>
 
-        <!-- 12 -->
+        <p>
+            <b>Columns wrapping</b>
+            <br>
+            If more than <code class="inline">$grid-columns</code> columns are placed within a single row, they'll wrap onto a new line, as long as they have defined widths.
+        </p>
+
         <div class="row">
             <div class="col-xxs-12">
                 <div class="inner">col-12</div>
             </div>
-        </div>
 
-        <!-- 1-11 -->
-        <div class="row">
             <div class="col-xxs-1">
                 <div class="inner">col-1</div>
             </div>
             <div class="col-xxs-11">
                 <div class="inner">col-11</div>
             </div>
-        </div>
 
-        <!-- 2-10 -->
-        <div class="row">
             <div class="col-xxs-2">
                 <div class="inner">col-2</div>
             </div>
             <div class="col-xxs-10">
                 <div class="inner">col-10</div>
             </div>
-        </div>
 
-        <!-- 3-9 -->
-        <div class="row">
             <div class="col-xxs-3">
                 <div class="inner">col-3</div>
             </div>
             <div class="col-xxs-9">
                 <div class="inner">col-9</div>
             </div>
-        </div>
 
-        <!-- 4-8 -->
-        <div class="row">
             <div class="col-xxs-4">
                 <div class="inner">col-4</div>
             </div>
             <div class="col-xxs-8">
                 <div class="inner">col-8</div>
             </div>
-        </div>
 
-        <!-- 5-7 -->
-        <div class="row">
             <div class="col-xxs-5">
                 <div class="inner">col-5</div>
             </div>
             <div class="col-xxs-7">
                 <div class="inner">col-7</div>
             </div>
+
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
         </div>
 
-        <!-- 6-6 -->
+        <h2>Fluid</h2>
+
+        <p>
+            <b>Percent based widths</b>
+            <br>
+            Add sizing classes to control individual columns.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
         <div class="row">
-            <div class="col-xxs-6">
+            <div class="col-xxs-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                 <div class="inner">col-6</div>
             </div>
-            <div class="col-xxs-6">
+            <div class="col-xxs-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                 <div class="inner">col-6</div>
+            </div>
+            <div class="col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="inner">col-4</div>
+            </div>
+            <div class="col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="inner">col-4</div>
+            </div>
+            <div class="col-xxs-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                <div class="inner">col-4</div>
             </div>
         </div>
-    </div>
+
+
+        <hr>
+
+
+        <p>
+            <b>Auto widths</b>
+            <br>
+            Add <code class="inline">.col-auto</code> and columns naturally space themselves equaly to fit the row.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+        </div>
+
+
+        <hr>
+
+
+        <p>
+            <b>Mixed sizing</b>
+            <br>
+            Add a sizing class to the desired column and add <code class="inline">.col-auto</code> to the remainders, in order to fill the row with naturally spaced columns.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-auto</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div class="inner">col-6</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div class="inner">col-6</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-auto">
+                <div class="inner">col-auto</div>
+            </div>
+            <div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                <div class="inner">col-8</div>
+            </div>
+        </div>
+    </article>
 
 
 

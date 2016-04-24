@@ -53,6 +53,6 @@
  * @param  $abs         [1, -1] Whether the $property value is positive or negative
  */
 @mixin calc-column-gutter($property, $breakpoint, $abs: 1) {
-    #{$property}-right: floor(((map-get($gutterMap, #{$breakpoint}) * $abs) / 2)) + px;
-    #{$property}-left: ceil(((map-get($gutterMap, #{$breakpoint}) * $abs) / 2)) + px;
+    #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+    #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
 }
