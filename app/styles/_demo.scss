@@ -107,3 +107,21 @@ code {
         align-items: center;
     }
 }
+
+.nesting {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fafafa;
+    border: 1px solid #bbb;
+
+    .row {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #eee;
+        border: 1px solid #999;
+    }
+
+    .inner {
+        margin: 0;
+    }
+}
