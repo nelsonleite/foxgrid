@@ -37,12 +37,24 @@
         }
     }
 
-    // reverse direction
+    //
+    // directions
+    //
     &.reverse {
         flex-direction: row-reverse;
     }
 
-    // remove gutter
+    &.vertical {
+        flex-direction: column;
+    }
+
+    &.vertical-reverse {
+        flex-direction: column-reverse;
+    }
+
+    //
+    // gutter modifications
+    //
     &.no-gutter-row,
     &.no-gutter {
         margin-right: 0;
@@ -81,6 +93,7 @@ $list: remove-nth($list, 1);
         }
     }
 
+    // remove gutter
     .row.no-gutter & {
         padding: 0;
     }
@@ -93,11 +106,15 @@ $list: remove-nth($list, 1);
     @if $val == '' {
         @include calc-grid-column($breakpoint, 'width');
         @include calc-grid-column($breakpoint, 'offset');
+        .col-#{$breakpoint}-first { order: -1; }
+        .col-#{$breakpoint}-last { order: 1; }
     }
     @else {
         @media (min-width: #{$val}) {
             @include calc-grid-column($breakpoint, 'width');
             @include calc-grid-column($breakpoint, 'offset');
+            .col-#{$breakpoint}-first { order: -1; }
+            .col-#{$breakpoint}-last { order: 1; }
         }
     }
 }

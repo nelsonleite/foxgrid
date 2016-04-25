@@ -30,7 +30,7 @@
             Foxgrid follows some rules to work properly:
         </p>
         <ul>
-            <li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or  just add the class <code class="inline">.no-gutter-row</code></li>
+            <li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or  just add the class <code class="inline">.no-gutter-row</code> to remove the negative margin</li>
             <li>Use rows to wrap columns (they're the ones with <code class="inline">display: flex</code>)</li>
         </ul>
         <p>
@@ -379,22 +379,22 @@ No media query since this is the default */</span>
         <h2>Offseting columns</h2>
 
         <p>
-            Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to move them.
+            Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to offset them.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-xxs-offset-3 col-xxs-6</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-xxs-offset-3</b> col-xxs-6</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-xxs-offset-2 col-xxs-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-xxs-offset-2</b> col-xxs-3</span>"&gt;&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-3</span>"&gt;&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-offset-1 col-xxs-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-xxs-offset-1</b> col-xxs-3</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="<span class="var">row</span>"&gt;
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-offset-4 col-xxs-4</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-xxs-offset-4</b> col-xxs-4</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row">
@@ -421,6 +421,258 @@ No media query since this is the default */</span>
             </div>
             <div class="col-xxs-offset-4 col-xxs-4">
                 <div class="inner">col-4</div>
+            </div>
+        </div>
+    </article>
+
+    <article class="container">
+        <h1>Columns direction</h1>
+
+        <h2>Reverse</h2>
+
+        <p>
+            Add <code class="inline">.reverse</code> to the row to invert the order of the columns.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>reverse</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row reverse">
+            <div class="col-xxs-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">6</div>
+            </div>
+        </div>
+
+        <h2>Vertical</h2>
+
+        <p>
+            Add <code class="inline">.vertical</code> to the row to display the columns in a vertical flow.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>vertical</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row vertical">
+            <div class="col-xxs-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">6</div>
+            </div>
+        </div>
+
+        <h2>Vertical reverse</h2>
+
+        <p>
+            Add <code class="inline">.vertical-reverse</code> to the row to display the columns in a reversed vertical flow.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>vertical-reverse</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row vertical-reverse">
+            <div class="col-xxs-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">6</div>
+            </div>
+        </div>
+    </article>
+
+    <article class="container">
+        <h1>Reorder columns</h1>
+
+        <h2>First</h2>
+
+        <p>
+            Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to either horizontal or vertical directions.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row vertical</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-xxs-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2 col-xxs-first">
+                <div class="inner reordered">6</div>
+            </div>
+        </div>
+
+        <hr style="margin-top: 10px;">
+
+        <div class="row vertical">
+            <div class="col-xxs-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2 col-xxs-first">
+                <div class="inner reordered">6</div>
+            </div>
+        </div>
+
+        <h2>Last</h2>
+
+        <p>
+            Add <code class="inline">.col-{$breakpoint}-last</code> to easily make the desired column the last (if nor other column has order specified). Applies to either horizontal or vertical directions.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row vertical</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-xxs-2 col-xxs-last">
+                <div class="inner reordered">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">6</div>
+            </div>
+        </div>
+
+        <hr style="margin-top: 10px;">
+
+        <div class="row vertical">
+            <div class="col-xxs-2 col-xxs-last">
+                <div class="inner reordered">1</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner">6</div>
             </div>
         </div>
     </article>
