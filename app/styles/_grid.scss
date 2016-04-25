@@ -104,49 +104,11 @@ $list: remove-nth($list, 1);
 //
 @each $breakpoint, $val in $breakpoints {
     @if $val == '' {
-        @include calc-grid-column($breakpoint, 'width');
-        @include calc-grid-column($breakpoint, 'offset');
-        .col-#{$breakpoint}-first { order: -1; }
-        .col-#{$breakpoint}-last { order: 1; }
+        @include loop-breakpoints();
     }
     @else {
         @media (min-width: #{$val}) {
-            @include calc-grid-column($breakpoint, 'width');
-            @include calc-grid-column($breakpoint, 'offset');
-            .col-#{$breakpoint}-first { order: -1; }
-            .col-#{$breakpoint}-last { order: 1; }
+            @include loop-breakpoints();
         }
     }
-}
-
-// =======================
-// alignments
-// =======================
-// horizontal
-.justify-start {
-    justify-content: flex-start;
-    text-align: start;
-}
-
-.justify-center {
-    justify-content: center;
-    text-align: center;
-}
-
-.justify-end {
-    justify-content: flex-end;
-    text-align: end;
-}
-
-// vertical
-.align-start {
-    align-items: flex-start;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.align-end {
-    align-items: flex-end;
 }

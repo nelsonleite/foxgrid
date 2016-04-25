@@ -96,19 +96,30 @@ code {
     }
 }
 
-[class*='col-'] {
-    .inner {
-        min-height: 30px;
-        color: #fff;
-        background-color: $_mainColor;
-        margin-bottom: 15px;
+.inner {
+    min-height: 30px;
+    color: #fff;
+    background-color: $_mainColor;
+    margin-bottom: 15px;
+
+    &:not(.no-flex) {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
 
-        &.reordered {
-            background-color: darken($_mainColor, 20%);
-        }
+    &.no-flex {
+        line-height: 30px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    &.bordered {
+        border-right: 2px solid darken($_mainColor, 20%);
+    }
+
+    &.reordered {
+        background-color: darken($_mainColor, 20%);
     }
 }
 
@@ -128,4 +139,19 @@ code {
     .inner {
         margin: 0;
     }
+}
+
+.row.big {
+    min-height: 200px;
+}
+
+// ====================
+// ====================
+
+.p-10 {
+    padding: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
 }

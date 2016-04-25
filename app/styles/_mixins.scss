@@ -1,4 +1,81 @@
 /**
+ * Calculate gutter width
+ * @param  $property    Property to apply the value
+ * @param  $breakpoint
+ * @param  $abs         [1, -1] Whether the $property value is positive or negative
+ */
+@mixin calc-column-gutter($property, $breakpoint, $abs: 1) {
+    #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+    #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+}
+
+/**
+ * Calculate properties for each column
+ * @param $breakpoint
+ * @param $type [width, offset] Property name
+ */
+@mixin calc-grid-column($breakpoint, $type) {
+    @for $i from 1 through $grid-columns {
+        // width
+        @if ($type == 'width') {
+            .col-#{$breakpoint}-#{$i} {
+                flex-basis: percentage($i / $grid-columns);
+                max-width: percentage($i / $grid-columns);
+            }
+        }
+
+        // offsets
+        @if ($type == 'offset') {
+            .col-#{$breakpoint}-offset-#{$i} {
+                margin-left: percentage($i / $grid-columns);
+            }
+        }
+    }
+}
+
+/**
+ * Mixin to avoid code duplication, once it is used with and
+ * without media queries
+ */
+@mixin loop-breakpoints() {
+    //
+    // width
+    //
+    @include calc-grid-column($breakpoint, 'width');
+
+    //
+    // offset
+    //
+    @include calc-grid-column($breakpoint, 'offset');
+
+    //
+    // order
+    //
+    .col-#{$breakpoint}-first { order: -1; }
+    .col-#{$breakpoint}-last { order: 1; }
+
+    //
+    // alignments
+    //
+    .justify-start-#{$breakpoint} {
+        justify-content: flex-start;
+        &.text { text-align: start; }
+    }
+    .justify-center-#{$breakpoint} {
+        justify-content: center;
+        &.text { text-align: center; }
+    }
+    .justify-end-#{$breakpoint} {
+        justify-content: flex-end;
+        &.text { text-align: end; }
+    }
+
+    .align-top-#{$breakpoint} { align-items: flex-start; }
+    .align-middle-#{$breakpoint} { align-items: center; }
+    .align-bottom-#{$breakpoint} { align-items: flex-end; }
+}
+
+/**
  * Removing list value at nth index
  * @param  {list} $list  List to remove the item
  * @param  {list} $index Index for the item to be removed
@@ -31,39 +108,4 @@
     }
 
     @return $result;
-}
-
-/**
- * Calculate properties for each column
- * @param $breakpoint
- * @param $type [width, offset] Property name
- */
-@mixin calc-grid-column($breakpoint, $type) {
-    @for $i from 1 through $grid-columns {
-        // dimensions
-        @if ($type == 'width') {
-            .col-#{$breakpoint}-#{$i} {
-                flex-basis: percentage($i / $grid-columns);
-                max-width: percentage($i / $grid-columns);
-            }
-        }
-
-        // offsets
-        @if ($type == 'offset') {
-            .col-#{$breakpoint}-offset-#{$i} {
-                margin-left: percentage($i / $grid-columns);
-            }
-        }
-    }
-}
-
-/**
- * Calculate gutter width
- * @param  $property    Property to apply the value
- * @param  $breakpoint
- * @param  $abs         [1, -1] Whether the $property value is positive or negative
- */
-@mixin calc-column-gutter($property, $breakpoint, $abs: 1) {
-    #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
-    #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
 }

@@ -105,7 +105,7 @@ No media query since this is the default */</span>
 
 
     <article class="container">
-        <h1>Grid system</h1>
+        <h1 id="grid-system">Grid system</h1>
 
         <p>
             <b>Columns wrapping</b>
@@ -161,7 +161,63 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <h2>Fluid</h2>
+        <hr>
+
+        <p>
+            <b>No gutter</b>
+            <br>
+            Add <code class="inline">.no-gutter</code> to the <code class="inline">.row</code> to remove the gutter between columns.
+        </p>
+
+        <div class="row no-gutter">
+            <div class="col-xxs-12">
+                <div class="inner bordered">col-12</div>
+            </div>
+
+            <div class="col-xxs-1">
+                <div class="inner bordered">col-1</div>
+            </div>
+            <div class="col-xxs-11">
+                <div class="inner">col-11</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner bordered">col-2</div>
+            </div>
+            <div class="col-xxs-10">
+                <div class="inner">col-10</div>
+            </div>
+
+            <div class="col-xxs-3">
+                <div class="inner bordered">col-3</div>
+            </div>
+            <div class="col-xxs-9">
+                <div class="inner">col-9</div>
+            </div>
+
+            <div class="col-xxs-4">
+                <div class="inner bordered">col-4</div>
+            </div>
+            <div class="col-xxs-8">
+                <div class="inner">col-8</div>
+            </div>
+
+            <div class="col-xxs-5">
+                <div class="inner bordered">col-5</div>
+            </div>
+            <div class="col-xxs-7">
+                <div class="inner">col-7</div>
+            </div>
+
+            <div class="col-xxs-6">
+                <div class="inner bordered">col-6</div>
+            </div>
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="fluid">Fluid</h2>
 
         <p>
             <b>Percent based widths</b>
@@ -327,7 +383,7 @@ No media query since this is the default */</span>
     </article>
 
     <article class="container">
-        <h2>Nesting columns</h2>
+        <h2 id="nesting-columns">Nesting columns</h2>
 
         <p>
             Rows and columns are infinitely nestable inside other columns.
@@ -376,7 +432,7 @@ No media query since this is the default */</span>
     </article>
 
     <article class="container">
-        <h2>Offseting columns</h2>
+        <h2 id="offseting-columns">Offseting columns</h2>
 
         <p>
             Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to offset them.
@@ -426,12 +482,12 @@ No media query since this is the default */</span>
     </article>
 
     <article class="container">
-        <h1>Columns direction</h1>
+        <h1 id="columns-direction">Columns direction</h1>
 
-        <h2>Reverse</h2>
+        <h2 id="reverse">Reverse</h2>
 
         <p>
-            Add <code class="inline">.reverse</code> to the row to invert the order of the columns.
+            Add <code class="inline">.reverse</code> to the <code class="inline">.row</code> to invert the order of the columns.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>reverse</b></span>"&gt;
@@ -464,83 +520,83 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <h2>Vertical</h2>
+        <h2 id="vertical">Vertical</h2>
 
         <p>
-            Add <code class="inline">.vertical</code> to the row to display the columns in a vertical flow.
+            Add <code class="inline">.vertical</code> to the <code class="inline">.row</code> to display the columns in a vertical flow.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical">
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">1</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">6</div>
             </div>
         </div>
 
-        <h2>Vertical reverse</h2>
+        <h2 id="vertical-reverse">Vertical reverse</h2>
 
         <p>
-            Add <code class="inline">.vertical-reverse</code> to the row to display the columns in a reversed vertical flow.
+            Add <code class="inline">.vertical-reverse</code> to the <code class="inline">.row</code> to display the columns in a reversed vertical flow.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical-reverse</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical-reverse">
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">1</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">6</div>
             </div>
         </div>
     </article>
 
     <article class="container">
-        <h1>Reorder columns</h1>
+        <h1 id="reorder-columns">Reorder columns</h1>
 
-        <h2>First</h2>
+        <h2 id="first">First</h2>
 
         <p>
             Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to either horizontal or vertical directions.
@@ -556,12 +612,12 @@ No media query since this is the default */</span>
 &lt;/div&gt;
 
 &lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row">
@@ -585,30 +641,30 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <hr style="margin-top: 10px;">
+        <hr class="mt-10">
 
         <div class="row vertical">
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">1</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-2 col-xxs-first">
+            <div class="col-xxs-4 col-xxs-first">
                 <div class="inner reordered">6</div>
             </div>
         </div>
 
-        <h2>Last</h2>
+        <h2 id="last">Last</h2>
 
         <p>
             Add <code class="inline">.col-{$breakpoint}-last</code> to easily make the desired column the last (if nor other column has order specified). Applies to either horizontal or vertical directions.
@@ -624,12 +680,12 @@ No media query since this is the default */</span>
 &lt;/div&gt;
 
 &lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4 <b>col-xxs-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row">
@@ -653,26 +709,256 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <hr style="margin-top: 10px;">
+        <hr class="mt-10">
 
         <div class="row vertical">
-            <div class="col-xxs-2 col-xxs-last">
+            <div class="col-xxs-4 col-xxs-last">
                 <div class="inner reordered">1</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-2">
+            <div class="col-xxs-4">
                 <div class="inner">6</div>
+            </div>
+        </div>
+    </article>
+
+    <article class="container">
+        <h1 id="alignment">Alignment</h1>
+
+        <p>
+            If you want the text to follow the alignment, simply add <code class="inline">.text</code> to the horizontal alignment class.
+        </p>
+
+        <h2 id="start">Start</h2>
+
+        <p>
+            Add <code class="inline">.justify-start-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the start.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>justify-start-sm text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row justify-start-sm text no-gutter-row nesting">
+            <div class="col-xxs-6">
+                <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="center">Center</h2>
+
+        <p>
+            Add <code class="inline">.justify-center-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the center.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>justify-center-sm text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row justify-center-sm text no-gutter-row nesting">
+            <div class="col-xxs-6">
+                <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="end">End</h2>
+
+        <p>
+            Add <code class="inline">.justify-end-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the end.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>justify-end-sm text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row justify-end-sm text no-gutter-row nesting">
+            <div class="col-xxs-6">
+                <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="top">Top</h2>
+
+        <p>
+            Add <code class="inline">.align-top-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the end.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>align-top-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">col-6</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row align-top-sm no-gutter-row nesting big">
+            <div class="col-xxs-12">
+                <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <div class="row align-top-sm mt-10">
+            <div class="col-xxs-6">
+                <div class="inner p-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="middle">Middle</h2>
+
+        <p>
+            Add <code class="inline">.align-middle-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the end.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>align-middle-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">col-6</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row align-middle-sm no-gutter-row nesting big">
+            <div class="col-xxs-12">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <div class="row align-middle-sm mt-10">
+            <div class="col-xxs-6">
+                <div class="inner p-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="bottom">Bottom</h2>
+
+        <p>
+            Add <code class="inline">.align-bottom-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the end.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>align-bottom-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">col-6</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row align-bottom-sm no-gutter-row nesting big">
+            <div class="col-xxs-12">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <div class="row align-bottom-sm mt-10">
+            <div class="col-xxs-6">
+                <div class="inner p-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+
+            <div class="col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <h2 id="mixed">Mixed/individually</h2>
+
+        <p>
+            Add <code class="inline">.align-self-<i>[alignment]</i>-{$breakpoint}</code> to the desired columns to align them indivudually.
+        </p>
+
+        <!-- <pre><code>&lt;div class="<span class="var">row <b>align-bottom-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">col-6</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre> -->
+
+        <div class="row align-bottom-sm mt-10">
+            <div class="col-xxs-3">
+                <div class="inner p-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+
+            <div class="col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-3">
+                <div class="inner">col-3</div>
             </div>
         </div>
     </article>
