@@ -91,11 +91,13 @@ $list: remove-nth($list, 1);
 //
 @each $breakpoint, $val in $breakpoints {
     @if $val == '' {
-        @include calc-grid-column($breakpoint);
+        @include calc-grid-column($breakpoint, 'width');
+        @include calc-grid-column($breakpoint, 'offset');
     }
     @else {
         @media (min-width: #{$val}) {
-            @include calc-grid-column($breakpoint);
+            @include calc-grid-column($breakpoint, 'width');
+            @include calc-grid-column($breakpoint, 'offset');
         }
     }
 }

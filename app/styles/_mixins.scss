@@ -34,14 +34,25 @@
 }
 
 /**
- * Calculate dimensions for each column
+ * Calculate properties for each column
  * @param $breakpoint
+ * @param $type [width, offset] Property name
  */
-@mixin calc-grid-column($breakpoint) {
+@mixin calc-grid-column($breakpoint, $type) {
     @for $i from 1 through $grid-columns {
-        .col-#{$breakpoint}-#{$i} {
-            flex-basis: percentage($i / $grid-columns);
-            max-width: percentage($i / $grid-columns);
+        // dimensions
+        @if ($type == 'width') {
+            .col-#{$breakpoint}-#{$i} {
+                flex-basis: percentage($i / $grid-columns);
+                max-width: percentage($i / $grid-columns);
+            }
+        }
+
+        // offsets
+        @if ($type == 'offset') {
+            .col-#{$breakpoint}-offset-#{$i} {
+                margin-left: percentage($i / $grid-columns);
+            }
         }
     }
 }

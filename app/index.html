@@ -327,7 +327,7 @@ No media query since this is the default */</span>
     </article>
 
     <article class="container">
-        <h2>Nesting</h2>
+        <h2>Nesting columns</h2>
 
         <p>
             Rows and columns are infinitely nestable inside other columns.
@@ -371,6 +371,56 @@ No media query since this is the default */</span>
                         <div class="inner">col-6</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="container">
+        <h2>Offseting columns</h2>
+
+        <p>
+            Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to move them.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-offset-3 col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-offset-2 col-xxs-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-offset-1 col-xxs-3</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-4</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-offset-4 col-xxs-4</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-xxs-offset-3 col-xxs-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xxs-offset-2 col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+            <div class="col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+            <div class="col-xxs-offset-1 col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xxs-4">
+                <div class="inner">col-4</div>
+            </div>
+            <div class="col-xxs-offset-4 col-xxs-4">
+                <div class="inner">col-4</div>
             </div>
         </div>
     </article>
