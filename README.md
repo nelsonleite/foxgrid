@@ -25,8 +25,6 @@
     *   [Space around](#space-around)
     *   [Space between](#space-between)
 
-<article class="container">
-
 # Foxgrid
 
 Foxgrid follows some rules to work properly:
@@ -40,12 +38,15 @@ And has the following options fully customizable:
 
 12 columns by default
 
+```scss
     $grid-columns: 12 !default;
+```
 
 ## Breakpoints
 
 6 mobile first breakpoints
 
+```scss
     $breakpoints: (
         xxs: '', // default
         xs: '640px',
@@ -54,9 +55,11 @@ And has the following options fully customizable:
         lg: '1200px',
         xl: '1600px'
     );
+```
 
 Which can be used with the following media queries:
 
+```scss
     /* Extra extra small devices (less than 640px)
     No media query since this is the default */
 
@@ -74,11 +77,13 @@ Which can be used with the following media queries:
 
     /* extra large devices (large desktops, 1600+ px)
     @media (min-width: map-get($breakpoints, xl) { ... }
+```
 
 ## Gutter per breakpoint
 
 Custom gutter for each breakpoint
 
+```scss
     $gutter-map: (
         xxs: 10,
         xs:  10,
@@ -87,14 +92,15 @@ Custom gutter for each breakpoint
         lg:  30,
         xl:  30
     );
+```
 
 and a set of helper variables for standalone usage
 
+```scss
     $gutter-xxs: map-get($gutter-map, xxs);
     $gutter-xs:  map-get($gutter-map, xs);
     $gutter-sm:  map-get($gutter-map, sm);
     $gutter-md:  map-get($gutter-map, md);
     $gutter-lg:  map-get($gutter-map, lg);
     $gutter-xl:  map-get($gutter-map, xl);
-
-</article>
+```
