@@ -60,22 +60,22 @@ And has the following options fully customizable:
 Which can be used with the following media queries:
 
 ```scss
-    /* Extra extra small devices (less than 640px)
-    No media query since this is the default */
+    // Extra extra small devices (less than 640px)
+    // No media query since this is the default
 
-    /* extra small devices (640+ px)
+    // extra small devices (640+ px)
     @media (min-width: map-get($breakpoints, xs) { ... }
 
-    /* small devices (tablet in portrait, 768+ px)
+    // small devices (tablet in portrait, 768+ px)
     @media (min-width: map-get($breakpoints, sm) { ... }
 
-    /* medium devices (small desktops, tablet in landscape, 992+ px)
+    // medium devices (small desktops, tablet in landscape, 992+ px)
     @media (min-width: map-get($breakpoints, md) { ... }
 
-    /* large devices (desktops, laptops, 1200+ px)
+    // large devices (desktops, laptops, 1200+ px)
     @media (min-width: map-get($breakpoints, lg) { ... }
 
-    /* extra large devices (large desktops, 1600+ px)
+    // extra large devices (large desktops, 1600+ px)
     @media (min-width: map-get($breakpoints, xl) { ... }
 ```
 
