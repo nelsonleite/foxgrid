@@ -101,6 +101,17 @@
         display: flex;
         align-self: stretch;
     }
+
+    //
+    // distribute
+    //
+    .space-around-#{$breakpoint} {
+        justify-content: space-around;
+    }
+
+    .space-between-#{$breakpoint} {
+        justify-content: space-between;
+    }
 }
 
 /**

@@ -8,6 +8,14 @@ body {
     line-height: 1.4;
 }
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .hero {
     height: 400px;
     background-color: $_mainColor;
@@ -32,6 +40,34 @@ body {
         line-height: 28px;
         max-width: 600px;
         margin: auto;
+    }
+}
+
+.toc {
+    ul {
+        font-size: 20px;
+        font-weight: bold;
+
+        a {
+            color: $_mainColor;
+            padding: 2px 0;
+            display: inline-block;
+        }
+
+        ul {
+            font-size: 18px;
+            font-weight: normal;
+
+            a {
+                color: #333;
+            }
+        }
+    }
+
+    > ul {
+        > li {
+            margin-bottom: 15px;
+        }
     }
 }
 

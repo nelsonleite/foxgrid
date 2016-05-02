@@ -25,10 +25,79 @@
         </div>
     </div>
 
+    <article class="container">
+        <h1>Table of contents</h1>
+
+        <nav class="toc">
+            <ul>
+                <li>
+                    <a href="#foxgrid">Foxgrid</a>
+
+                    <ul>
+                        <li> <a href="#columns">Columns</a> </li>
+                        <li> <a href="#nbreakpoints">Breakpoints</a> </li>
+                        <li> <a href="#gutter">Gutter per breakpoint</a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#grid-system">Grid system</a>
+
+                    <ul>
+                        <li> <a href="#fluid">Fluid</a> </li>
+                        <li> <a href="#nesting-columns">Nesting columns</a> </li>
+                        <li> <a href="#offseting-columns">Offseting column</a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#columns-direction">Columns direction</a>
+
+                    <ul>
+                        <li> <a href="#reverse">Reverse</a> </li>
+                        <li> <a href="#vertical">Vertical</a> </li>
+                        <li> <a href="#vertical-reverse">Vertical reverse</a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#reorder-columns">Reorder columns</a>
+
+                    <ul>
+                        <li> <a href="#first">First</a> </li>
+                        <li> <a href="#last">Last</a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#items-alignment">Items alignment</a>
+
+                    <ul>
+                        <li> <a href="#start">Start</a> </li>
+                        <li> <a href="#center">Center</a> </li>
+                        <li> <a href="#end">End</a> </li>
+                        <li> <a href="#top">Top</a> </li>
+                        <li> <a href="#middle">Middle</a> </li>
+                        <li> <a href="#bottom">Bottom</a> </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#self-alignment">Self alignment and stretch</a>
+                </li>
+                <li>
+                    <a href="#distrubution">Distribution</a>
+
+                    <ul>
+                        <li> <a href="#space-around">Space around</a> </li>
+                        <li> <a href="#space-between">Space between</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </article>
+
     <!-- ========================================================================================================= -->
     <!-- ========================================================================================================= -->
 
     <article class="container">
+        <h1 id="foxgrid">Foxgrid</h1>
+
         <p>
             Foxgrid follows some rules to work properly:
         </p>
@@ -40,14 +109,14 @@
             And has the following options fully customizable:
         </p>
 
-        <h2>Columns</h2>
+        <h2 id="columns">Columns</h2>
         <p>
             12 columns by default
         </p>
         <pre><code><span class="var">$grid-columns:</span> 12 !default;</code></pre>
 
 
-        <h2>Breakpoints</h2>
+        <h2 id="breakpoints">Breakpoints</h2>
         <p>
             6 mobile first breakpoints
         </p>
@@ -83,7 +152,7 @@ No media query since this is the default */</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, xl) { ... }
         </code></pre>
 
-        <h2>Gutter per breakpoint</h2>
+        <h2 id="gutter">Gutter per breakpoint</h2>
         <p>
             Custom gutter for each breakpoint
         </p>
@@ -550,22 +619,22 @@ No media query since this is the default */</span>
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical">
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">1</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">6</div>
             </div>
         </div>
@@ -577,31 +646,31 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical-reverse</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-12</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical-reverse">
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">1</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">2</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">3</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">4</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">5</div>
             </div>
-            <div class="col-xxs-4">
+            <div class="col-xxs-12">
                 <div class="inner">6</div>
             </div>
         </div>
@@ -626,7 +695,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-2 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;<!--
 
 &lt;div class="<span class="var">row vertical</span>"&gt;
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
@@ -635,7 +704,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-4 <b>col-xxs-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt; --></code></pre>
 
         <div class="row">
             <div class="col-xxs-2">
@@ -658,7 +727,7 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <hr class="mt-10">
+        <!-- <hr class="mt-10">
 
         <div class="row vertical">
             <div class="col-xxs-4">
@@ -679,7 +748,7 @@ No media query since this is the default */</span>
             <div class="col-xxs-4 col-xxs-first">
                 <div class="inner reordered">6</div>
             </div>
-        </div>
+        </div> -->
 
         <h2 id="last">Last</h2>
 
@@ -694,7 +763,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;<!--
 
 &lt;div class="<span class="var">row vertical</span>"&gt;
     &lt;div class="<span class="var">col-xxs-4 <b>col-xxs-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
@@ -703,7 +772,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-xxs-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt; --></code></pre>
 
         <div class="row">
             <div class="col-xxs-2 col-xxs-last">
@@ -726,7 +795,7 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <hr class="mt-10">
+        <!-- <hr class="mt-10">
 
         <div class="row vertical">
             <div class="col-xxs-4 col-xxs-last">
@@ -747,7 +816,7 @@ No media query since this is the default */</span>
             <div class="col-xxs-4">
                 <div class="inner">6</div>
             </div>
-        </div>
+        </div> -->
     </article>
 
     <!-- ========================================================================================================= -->
@@ -768,11 +837,29 @@ No media query since this is the default */</span>
 
         <pre><code>&lt;div class="<span class="var">row <b>justify-start-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row <b>justify-start-sm align-text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row justify-start-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <div class="row justify-start-sm align-text no-gutter-row nesting mt-10">
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
             </div>
         </div>
 
@@ -784,11 +871,29 @@ No media query since this is the default */</span>
 
         <pre><code>&lt;div class="<span class="var">row <b>justify-center-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row <b>justify-center-sm align-text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row justify-center-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <div class="row justify-center-sm align-text no-gutter-row nesting mt-10">
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
             </div>
         </div>
 
@@ -800,11 +905,29 @@ No media query since this is the default */</span>
 
         <pre><code>&lt;div class="<span class="var">row <b>justify-end-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row <b>justify-end-sm align-text</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row justify-end-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
+            </div>
+        </div>
+
+        <div class="row justify-end-sm align-text no-gutter-row nesting mt-10">
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
+            </div>
+            <div class="col-xxs-2">
+                <div class="inner no-flex">col-2</div>
             </div>
         </div>
 
@@ -944,7 +1067,7 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>stretch</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-3</span>"&gt;
         <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -1000,29 +1123,32 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
+        <span class="comment">col-2</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
         <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat.</span>
     &lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-3 <b>align-self-start-sm</b></span>"&gt;
-        <span class="comment">col-3</span>
+    &lt;div class="<span class="var">col-xxs-2 <b>align-self-start-sm</b></span>"&gt;
+        <span class="comment">col-2</span>
     &lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-3 <b>align-self-middle-sm</b></span>"&gt;
-        <span class="comment">col-3</span>
+    &lt;div class="<span class="var">col-xxs-2 <b>align-self-middle-sm</b></span>"&gt;
+        <span class="comment">col-2</span>
     &lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-3 <b>align-self-bottom-sm</b></span>"&gt;
-        <span class="comment">col-3</span>
+    &lt;div class="<span class="var">col-xxs-2 <b>align-self-bottom-sm</b></span>"&gt;
+        <span class="comment">col-2</span>
     &lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-3 <b>slef-stretch-sm</b></span>"&gt;
-        <span class="comment">col-3</span>
+    &lt;div class="<span class="var">col-xxs-2 <b>self-stretch-sm</b></span>"&gt;
+        <span class="comment">col-2</span>
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row mt-10">
             <div class="col-xxs-2">
-                <div class="inner">col-3</div>
+                <div class="inner">col-2</div>
             </div>
 
             <div class="col-xxs-2">
@@ -1035,19 +1161,78 @@ No media query since this is the default */</span>
             </div>
 
             <div class="col-xxs-2 align-self-start-sm">
-                <div class="inner">col-3</div>
+                <div class="inner">col-2</div>
             </div>
 
             <div class="col-xxs-2 align-self-middle-sm">
-                <div class="inner">col-3</div>
+                <div class="inner">col-2</div>
             </div>
 
             <div class="col-xxs-2 align-self-bottom-sm">
-                <div class="inner">col-3</div>
+                <div class="inner">col-2</div>
             </div>
 
             <div class="col-xxs-2 self-stretch-sm">
-                <div class="inner">col-3</div>
+                <div class="inner">col-2</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
+    <article class="container">
+        <h1 id="distrubution">Distribution</h1>
+
+        <h2 id="space-around">Space around</h2>
+
+        <p>
+            Add <code class="inline">.space-around-{$breakpoint}</code> to the <code class="inline">.row</code> to distribute the columns with equal space around them.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>space-around-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
+        <span class="comment">col-2</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row space-around-sm mt-10">
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+        </div>
+
+        <h2 id="space-between">Space between</h2>
+
+        <p>
+            Add <code class="inline">.space-between-{$breakpoint}</code> to the <code class="inline">.row</code> to distribute the columns evenly: first item is on the start of the row, last item on the end of the row.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row <b>space-around-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
+        <span class="comment">col-2</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row space-between-sm mt-10">
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner">col-2</div>
             </div>
         </div>
     </article>
