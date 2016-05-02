@@ -121,6 +121,11 @@ code {
     &.reordered {
         background-color: darken($_mainColor, 20%);
     }
+
+    [class*="stretch-"] & {
+        display: flex;
+        flex: 1;
+    }
 }
 
 .nesting {

@@ -8,7 +8,7 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="styles/main.css">
 </head>
@@ -24,6 +24,9 @@
             </div>
         </div>
     </div>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
 
     <article class="container">
         <p>
@@ -103,6 +106,8 @@ No media query since this is the default */</span>
 <span class="var">$gutter-xl: </span> map-get(<span class="var">$gutter-map</span>, xl);</code></pre>
     </article>
 
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
 
     <article class="container">
         <h1 id="grid-system">Grid system</h1>
@@ -382,6 +387,9 @@ No media query since this is the default */</span>
         </div>
     </article>
 
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
     <article class="container">
         <h2 id="nesting-columns">Nesting columns</h2>
 
@@ -430,6 +438,9 @@ No media query since this is the default */</span>
             </div>
         </div>
     </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
 
     <article class="container">
         <h2 id="offseting-columns">Offseting columns</h2>
@@ -480,6 +491,9 @@ No media query since this is the default */</span>
             </div>
         </div>
     </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
 
     <article class="container">
         <h1 id="columns-direction">Columns direction</h1>
@@ -592,6 +606,9 @@ No media query since this is the default */</span>
             </div>
         </div>
     </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
 
     <article class="container">
         <h1 id="reorder-columns">Reorder columns</h1>
@@ -733,11 +750,14 @@ No media query since this is the default */</span>
         </div>
     </article>
 
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
     <article class="container">
-        <h1 id="alignment">Alignment</h1>
+        <h1 id="items-alignment">Items alignment</h1>
 
         <p>
-            If you want the text to follow the alignment, simply add <code class="inline">.text</code> to the horizontal alignment class.
+            If you want the text to follow the alignment, simply add <code class="inline">.align-text</code> to the horizontal alignment class.
         </p>
 
         <h2 id="start">Start</h2>
@@ -746,11 +766,11 @@ No media query since this is the default */</span>
             Add <code class="inline">.justify-start-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the start.
         </p>
 
-        <pre><code>&lt;div class="<span class="var">row <b>justify-start-sm text</b></span>"&gt;
+        <pre><code>&lt;div class="<span class="var">row <b>justify-start-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-        <div class="row justify-start-sm text no-gutter-row nesting">
+        <div class="row justify-start-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
             </div>
@@ -762,11 +782,11 @@ No media query since this is the default */</span>
             Add <code class="inline">.justify-center-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the center.
         </p>
 
-        <pre><code>&lt;div class="<span class="var">row <b>justify-center-sm text</b></span>"&gt;
+        <pre><code>&lt;div class="<span class="var">row <b>justify-center-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-        <div class="row justify-center-sm text no-gutter-row nesting">
+        <div class="row justify-center-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
             </div>
@@ -778,11 +798,11 @@ No media query since this is the default */</span>
             Add <code class="inline">.justify-end-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the end.
         </p>
 
-        <pre><code>&lt;div class="<span class="var">row <b>justify-end-sm text</b></span>"&gt;
+        <pre><code>&lt;div class="<span class="var">row <b>justify-end-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-        <div class="row justify-end-sm text no-gutter-row nesting">
+        <div class="row justify-end-sm align-text no-gutter-row nesting">
             <div class="col-xxs-6">
                 <div class="inner no-flex">col-6</div>
             </div>
@@ -917,13 +937,13 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <h2 id="mixed">Mixed/individually</h2>
+        <h2 id="stretch">Stretch</h2>
 
         <p>
-            Add <code class="inline">.align-self-<i>[alignment]</i>-{$breakpoint}</code> to the desired columns to align them indivudually.
+            Add <code class="inline">.stretch-{$breakpoint}</code> to the <code class="inline">.row</code> to apply the same height to all columns.
         </p>
 
-        <!-- <pre><code>&lt;div class="<span class="var">row <b>align-bottom-sm</b></span>"&gt;
+        <pre><code>&lt;div class="<span class="var">row <b>stretch</b></span>"&gt;
     &lt;div class="<span class="var">col-xxs-6</span>"&gt;
         <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -932,12 +952,18 @@ No media query since this is the default */</span>
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
     &lt;/div&gt;
-    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
-        <span class="comment">col-6</span>
+    &lt;div class="<span class="var">col-xxs-3</span>"&gt;
+        <span class="comment">col-3</span>
     &lt;/div&gt;
-&lt;/div&gt;</code></pre> -->
+    &lt;div class="<span class="var">col-xxs-3</span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3</span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-        <div class="row align-bottom-sm mt-10">
+        <div class="row stretch-sm mt-10">
             <div class="col-xxs-3">
                 <div class="inner p-10">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -958,6 +984,69 @@ No media query since this is the default */</span>
             </div>
 
             <div class="col-xxs-3">
+                <div class="inner">col-3</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
+    <article class="container">
+        <h1 id="self-alignment">Self alignment and stretch</h1>
+
+        <p>
+            Add <code class="inline">.align-self-<i>[alignment]</i>-{$breakpoint}</code> to the desired columns to align them indivudually or <code class="inline">.self-stretch-{$breakpoint}</code> to stretch them individually.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-xxs-6</span>"&gt;
+        <span class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3 <b>align-self-start-sm</b></span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3 <b>align-self-middle-sm</b></span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3 <b>align-self-bottom-sm</b></span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-3 <b>slef-stretch-sm</b></span>"&gt;
+        <span class="comment">col-3</span>
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row mt-10">
+            <div class="col-xxs-2">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-2">
+                <div class="inner p-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </div>
+            </div>
+
+            <div class="col-xxs-2 align-self-start-sm">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-2 align-self-middle-sm">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-2 align-self-bottom-sm">
+                <div class="inner">col-3</div>
+            </div>
+
+            <div class="col-xxs-2 self-stretch-sm">
                 <div class="inner">col-3</div>
             </div>
         </div>
