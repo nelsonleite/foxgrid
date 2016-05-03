@@ -81,7 +81,7 @@
                     <a href="#self-alignment">Self alignment and stretch</a>
                 </li>
                 <li>
-                    <a href="#distrubution">Distribution</a>
+                    <a href="#distribution">Distribution</a>
 
                     <ul>
                         <li> <a href="#space-around">Space around</a> </li>
@@ -99,7 +99,9 @@
         <h1 id="foxgrid">Foxgrid</h1>
 
         <p>
-            Foxgrid follows some rules to work properly:
+            Grids are used for creating page layouts, and Foxgrid works very similarly to the standard float grid, but takes advantage of some feature only possible with flexbox (<a href="http://caniuse.com/#feat=flexbox">Flexbox support</a>).
+            <br>
+            Foxgrid was built in SCSS and the grid follows some rules to work properly:
         </p>
         <ul>
             <li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or  just add the class <code class="inline">.no-gutter-row</code> to remove the negative margin</li>
@@ -136,19 +138,19 @@
         <pre><code><span class="comment">/* Extra extra small devices (less than 640px)
 No media query since this is the default */</span>
 
-<span class="comment">/* extra small devices (640+ px)</span>
+<span class="comment">// extra small devices (640+ px)</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, xs) { ... }
 
-<span class="comment">/* small devices (tablet in portrait, 768+ px)</span>
+<span class="comment">// small devices (tablet in portrait, 768+ px)</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, sm) { ... }
 
-<span class="comment">/* medium devices (small desktops, tablet in landscape, 992+ px)</span>
+<span class="comment">// medium devices (small desktops, tablet in landscape, 992+ px)</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, md) { ... }
 
-<span class="comment">/* large devices (desktops, laptops, 1200+ px)</span>
+<span class="comment">// large devices (desktops, laptops, 1200+ px)</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, lg) { ... }
 
-<span class="comment">/* extra large devices (large desktops, 1600+ px)</span>
+<span class="comment">// extra large devices (large desktops, 1600+ px)</span>
 <span class="var">@media</span> (min-width: map-get($breakpoints, xl) { ... }
         </code></pre>
 
@@ -1182,7 +1184,7 @@ No media query since this is the default */</span>
     <!-- ========================================================================================================= -->
 
     <article class="container">
-        <h1 id="distrubution">Distribution</h1>
+        <h1 id="distribution">Distribution</h1>
 
         <h2 id="space-around">Space around</h2>
 
@@ -1191,9 +1193,9 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>space-around-sm</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
-        <span class="comment">col-2</span>
-    &lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row space-around-sm mt-10">
@@ -1216,10 +1218,10 @@ No media query since this is the default */</span>
             Add <code class="inline">.space-between-{$breakpoint}</code> to the <code class="inline">.row</code> to distribute the columns evenly: first item is on the start of the row, last item on the end of the row.
         </p>
 
-        <pre><code>&lt;div class="<span class="var">row <b>space-around-sm</b></span>"&gt;
-    &lt;div class="<span class="var">col-xxs-2</span>"&gt;
-        <span class="comment">col-2</span>
-    &lt;/div&gt;
+        <pre><code>&lt;div class="<span class="var">row <b>space-between-sm</b></span>"&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-xxs-2</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row space-between-sm mt-10">

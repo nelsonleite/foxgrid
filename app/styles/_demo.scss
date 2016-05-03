@@ -9,10 +9,11 @@ body {
 }
 
 a {
-    text-decoration: none;
+    color: $_mainColor;
 
     &:hover {
         text-decoration: underline;
+        color: darken($_mainColor, 15%);
     }
 }
 
@@ -52,6 +53,11 @@ a {
             color: $_mainColor;
             padding: 2px 0;
             display: inline-block;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         ul {
