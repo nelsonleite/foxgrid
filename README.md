@@ -466,7 +466,7 @@ Add `.stretch-{$breakpoint}` to the `.row` to apply the same height to all colum
 
 # Self alignment and stretch
 
-Add `.align-self-_[alignment]_-{$breakpoint}` to the desired columns to align them indivudually or `.self-stretch-{$breakpoint}` to stretch them individually.
+Add `.align-self-[alignment]-{$breakpoint}` to the desired columns to align them indivudually or `.self-stretch-{$breakpoint}` to stretch them individually.
 
 ```html
 <div class="row">
