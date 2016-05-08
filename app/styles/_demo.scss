@@ -1,4 +1,4 @@
-$_mainColor: cadetblue;
+$_mainColor: #ff8000;
 
 body {
     // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -18,10 +18,10 @@ a {
 }
 
 .hero {
-    height: 400px;
-    background-color: $_mainColor;
+    height: 450px;
+    background-color: lighten($_mainColor, 10%);
     text-align: center;
-    padding: 50px;
+    padding: 30px 50px 70px;
     color: #fff;
     margin-bottom: 30px;
 
@@ -36,11 +36,20 @@ a {
         margin: 0 0 20px 0;
     }
 
+    img {
+        width: 150px;
+    }
+
     .lead {
         font-size: 22px;
         line-height: 28px;
         max-width: 600px;
         margin: auto;
+
+        b {
+            text-transform: uppercase;
+            font-size: 125%;
+        }
     }
 }
 
