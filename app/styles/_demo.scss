@@ -45,11 +45,16 @@ a {
         line-height: 28px;
         max-width: 600px;
         margin: auto;
+        margin-bottom: 30px;
 
         b {
             text-transform: uppercase;
             font-size: 125%;
         }
+    }
+
+    iframe {
+        margin: 0 5px;
     }
 }
 

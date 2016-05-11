@@ -1,5 +1,6 @@
 ## Table of contents
 
+*   [Demo](https://nelsonleite.github.com/foxgrid)
 *   [Foxgrid](#foxgrid)
     *   [Columns](#columns)
     *   [Breakpoints](#breakpoints)
