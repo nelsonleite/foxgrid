@@ -91,6 +91,7 @@ _site/
 
 
 .vagrant
+dist
 _tmp
 app/build/**
 .sass-cache
