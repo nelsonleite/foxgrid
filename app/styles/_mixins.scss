@@ -57,15 +57,15 @@
     //
     // alignments
     //
-    .justify-start-#{$breakpoint} {
+    .align-start-#{$breakpoint} {
         justify-content: flex-start;
         &.align-text { text-align: start; }
     }
-    .justify-center-#{$breakpoint} {
+    .align-center-#{$breakpoint} {
         justify-content: center;
         &.align-text { text-align: center; }
     }
-    .justify-end-#{$breakpoint} {
+    .align-end-#{$breakpoint} {
         justify-content: flex-end;
         &.align-text { text-align: end; }
     }
