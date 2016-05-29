@@ -68,6 +68,12 @@
 $list: '';
 
 @each $breakpoint, $val in $breakpoints {
+    @if $val == '' {
+        @for $i from 1 through $grid-columns {
+            $list: append($list, '.col-#{$i},', comma);
+        }
+    }
+
     @for $i from 1 through $grid-columns {
         $list: append($list, '.col-#{$breakpoint}-#{$i},', comma);
     }

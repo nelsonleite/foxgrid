@@ -15,9 +15,25 @@
  * @param $type [width, offset] Property name
  */
 @mixin calc-grid-column($breakpoint, $type) {
+    $breakpoint-keys: map-keys($breakpoints);
+    $fisrt-breakpoint: nth($breakpoint-keys, 1);
+
     @for $i from 1 through $grid-columns {
         // width
         @if ($type == 'width') {
+            @if ($fisrt-breakpoint == $breakpoint) {
+
+            }
+
+            // first breakpoint: avoid specifying column breakpoint
+            @if ($fisrt-breakpoint == $breakpoint) {
+                .col-#{$i} {
+                    flex-basis: percentage($i / $grid-columns);
+                    max-width: percentage($i / $grid-columns);
+                }
+            }
+
+            // regular breakpoint columns
             .col-#{$breakpoint}-#{$i} {
                 flex-basis: percentage($i / $grid-columns);
                 max-width: percentage($i / $grid-columns);
@@ -26,6 +42,12 @@
 
         // offsets
         @if ($type == 'offset') {
+            @if ($fisrt-breakpoint == $breakpoint) {
+                .col-offset-#{$i} {
+                    margin-left: percentage($i / $grid-columns);
+                }
+            }
+
             .col-#{$breakpoint}-offset-#{$i} {
                 margin-left: percentage($i / $grid-columns);
             }
@@ -57,15 +79,15 @@
     //
     // alignments
     //
-    .justify-start-#{$breakpoint} {
+    .align-start-#{$breakpoint} {
         justify-content: flex-start;
         &.align-text { text-align: start; }
     }
-    .justify-center-#{$breakpoint} {
+    .align-center-#{$breakpoint} {
         justify-content: center;
         &.align-text { text-align: center; }
     }
-    .justify-end-#{$breakpoint} {
+    .align-end-#{$breakpoint} {
         justify-content: flex-end;
         &.align-text { text-align: end; }
     }
