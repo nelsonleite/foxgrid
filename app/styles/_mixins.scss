@@ -1,4 +1,22 @@
 /**
+ * Base style and gutter for columns
+ */
+@mixin make-grid-columns() {
+    flex: 1 0 auto;
+
+    @each $breakpoint, $val in $breakpoints {
+        @if $val == '' {
+            @include calc-column-gutter('padding', $breakpoint);
+        }
+        @else {
+            @media (min-width: #{$val}) {
+                @include calc-column-gutter('padding', $breakpoint);
+            }
+        }
+    }
+}
+
+/**
  * Calculate gutter width
  * @param  $property    Property to apply the value
  * @param  $breakpoint
@@ -14,17 +32,10 @@
  * @param $breakpoint
  * @param $type [width, offset] Property name
  */
-@mixin calc-grid-column($breakpoint, $type) {
-    $breakpoint-keys: map-keys($breakpoints);
-    $fisrt-breakpoint: nth($breakpoint-keys, 1);
-
+@mixin calc-grid-column($breakpoint: $fisrt-breakpoint, $type: 'width', $grid-columns: $grid-columns) {
     @for $i from 1 through $grid-columns {
         // width
         @if ($type == 'width') {
-            @if ($fisrt-breakpoint == $breakpoint) {
-
-            }
-
             // first breakpoint: avoid specifying column breakpoint
             @if ($fisrt-breakpoint == $breakpoint) {
                 .col-#{$i} {
@@ -63,7 +74,7 @@
     //
     // width
     //
-    @include calc-grid-column($breakpoint, 'width');
+    @include calc-grid-column($breakpoint);
 
     //
     // offset
@@ -137,6 +148,48 @@
 }
 
 /**
+ * Semantic row
+ */
+@mixin grid-row($gutter: true) {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    // gutter margins
+    @if ($gutter == true) {
+        @include grid-row-gutter-margins();
+    }
+}
+
+/**
+ * Semantic row margins
+ */
+@mixin grid-row-gutter-margins() {
+    // gutter margins
+    @each $breakpoint, $val in $breakpoints {
+        @if $val == '' {
+            @include calc-column-gutter('margin', $breakpoint, -1);
+        }
+        @else {
+            @media (min-width: #{$val}) {
+                @include calc-column-gutter('margin', $breakpoint, -1);
+            }
+        }
+    }
+}
+
+/**
+ * Semantic columns
+ */
+@mixin grid-column($_count) {
+    @include make-grid-columns();
+
+    flex-basis: percentage($_count / $grid-columns);
+    max-width: percentage($_count / $grid-columns);
+}
+
+/**
  * Removing list value at nth index
  * @param  {list} $list  List to remove the item
  * @param  {list} $index Index for the item to be removed
@@ -170,3 +223,4 @@
 
     @return $result;
 }
+

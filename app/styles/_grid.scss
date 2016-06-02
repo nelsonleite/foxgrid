@@ -18,23 +18,11 @@
 // wrapper for columns
 // =======================
 .row {
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
+    @include grid-row();
 
     // gutter margins
     &:not(.no-gutter) {
-        @each $breakpoint, $val in $breakpoints {
-            @if $val == '' {
-                @include calc-column-gutter('margin', $breakpoint, -1);
-            }
-            @else {
-                @media (min-width: #{$val}) {
-                    @include calc-column-gutter('margin', $breakpoint, -1);
-                }
-            }
-        }
+        @include grid-row-gutter-margins();
     }
 
     //
@@ -86,18 +74,7 @@ $list: remove-nth($list, 1);
 //
 #{$list},
 .col-auto {
-    flex: 1 0 auto;
-
-    @each $breakpoint, $val in $breakpoints {
-        @if $val == '' {
-            @include calc-column-gutter('padding', $breakpoint);
-        }
-        @else {
-            @media (min-width: #{$val}) {
-                @include calc-column-gutter('padding', $breakpoint);
-            }
-        }
-    }
+    @include make-grid-columns();
 
     // remove gutter
     .row.no-gutter & {
