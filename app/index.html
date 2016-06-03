@@ -54,6 +54,7 @@
 
                     <ul>
                         <li> <a href="#fluid">Fluid</a> </li>
+                        <li> <a href="#building-semantically">Building semantically</a> </li>
                         <li> <a href="#nesting-columns">Nesting columns</a> </li>
                         <li> <a href="#offseting-columns">Offseting column</a> </li>
                     </ul>
@@ -471,11 +472,34 @@ No media query since this is the default */</span>
     <!-- ========================================================================================================= -->
     <!-- ========================================================================================================= -->
 
-    <hr>
-    <hr>
-    <hr>
-
     <article class="container">
+        <h2 id="building-semantically">Building semantically</h2>
+
+        <p>
+            <b>Rows</b>
+            <br>
+            Use <code class="inline">grid-row()</code> mixin to define a row.
+        </p>
+
+        <p>
+            <b>Columns</b>
+            <br>
+            Use <code class="inline">grid-column(*)</code> mixin to create columns.
+        </p>
+
+<pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row()</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(6)</span>;
+    }
+}</code></pre>
+
+<pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
         <div class="main">
             <div class="content">
                 <div class="inner">
@@ -488,11 +512,81 @@ No media query since this is the default */</span>
                 </div>
             </div>
         </div>
-    </article>
 
-    <hr>
-    <hr>
-    <hr>
+        <hr>
+
+        <p>
+            <b>Control gutters</b>
+            <br>
+            To remove gutters, simple add <code class="inline">false</code> parameter to either <code class="inline">grid-row(false)</code> and <code class="inline">grid-column(*, false)</code>.
+        </p>
+
+<pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row(false)</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(6, false)</span>;
+    }
+}</code></pre>
+
+<pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="main-no-gutter">
+            <div class="content">
+                <div class="inner">
+                    content
+                </div>
+            </div>
+            <div class="content">
+                <div class="inner">
+                    content
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <p>
+            <b>Control columns count</b>
+            <br>
+            To define a grid with a different number of columns, just define <code class="inline">grid-column(*, $grid-columns: *)</code>.
+        </p>
+
+<pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row()</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(6, $grid-columns: 18)</span>;
+    }
+}</code></pre>
+
+<pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="main-different-columns">
+            <div class="content">
+                <div class="inner">
+                    content
+                </div>
+            </div>
+            <div class="content">
+                <div class="inner">
+                    content
+                </div>
+            </div>
+            <div class="content">
+                <div class="inner">
+                    content
+                </div>
+            </div>
+        </div>
+    </article>
 
     <!-- ========================================================================================================= -->
     <!-- ========================================================================================================= -->

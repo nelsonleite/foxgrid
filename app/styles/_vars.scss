@@ -11,7 +11,7 @@ $breakpoints: (
     xl: '1600px'
 );
 $breakpoint-keys: map-keys($breakpoints);
-$fisrt-breakpoint: nth($breakpoint-keys, 1);
+$first-breakpoint: nth($breakpoint-keys, 1);
 
 // different gutters by screen breakpoint
 $gutter-map: (

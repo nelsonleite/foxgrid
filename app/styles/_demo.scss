@@ -209,10 +209,26 @@ code {
 // ====================
 // ====================
 .main {
-    @include grid-row(false);
+    @include grid-row();
 
     .content {
         @include grid-column(6);
+    }
+}
+
+.main-no-gutter {
+    @include grid-row(false);
+
+    .content {
+        @include grid-column(6, false);
+    }
+}
+
+.main-different-columns {
+    @include grid-row();
+
+    .content {
+        @include grid-column(6, $grid-columns: 18);
     }
 }
 

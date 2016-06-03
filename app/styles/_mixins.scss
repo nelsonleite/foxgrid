@@ -1,16 +1,18 @@
 /**
  * Base style and gutter for columns
  */
-@mixin make-grid-columns() {
+@mixin make-grid-columns($_gutter: true) {
     flex: 1 0 auto;
 
-    @each $breakpoint, $val in $breakpoints {
-        @if $val == '' {
-            @include calc-column-gutter('padding', $breakpoint);
-        }
-        @else {
-            @media (min-width: #{$val}) {
+    @if ($_gutter == true) {
+        @each $breakpoint, $val in $breakpoints {
+            @if $val == '' {
                 @include calc-column-gutter('padding', $breakpoint);
+            }
+            @else {
+                @media (min-width: #{$val}) {
+                    @include calc-column-gutter('padding', $breakpoint);
+                }
             }
         }
     }
@@ -32,35 +34,35 @@
  * @param $breakpoint
  * @param $type [width, offset] Property name
  */
-@mixin calc-grid-column($breakpoint: $fisrt-breakpoint, $type: 'width', $grid-columns: $grid-columns) {
-    @for $i from 1 through $grid-columns {
+@mixin calc-grid-column($_breakpoint: $first-breakpoint, $_type: 'width', $_grid-columns: $grid-columns) {
+    @for $i from 1 through $_grid-columns {
         // width
-        @if ($type == 'width') {
+        @if ($_type == 'width') {
             // first breakpoint: avoid specifying column breakpoint
-            @if ($fisrt-breakpoint == $breakpoint) {
+            @if ($first-breakpoint == $_breakpoint) {
                 .col-#{$i} {
-                    flex-basis: percentage($i / $grid-columns);
-                    max-width: percentage($i / $grid-columns);
+                    flex-basis: percentage($i / $_grid-columns);
+                    max-width: percentage($i / $_grid-columns);
                 }
             }
 
             // regular breakpoint columns
-            .col-#{$breakpoint}-#{$i} {
-                flex-basis: percentage($i / $grid-columns);
-                max-width: percentage($i / $grid-columns);
+            .col-#{$_breakpoint}-#{$i} {
+                flex-basis: percentage($i / $_grid-columns);
+                max-width: percentage($i / $_grid-columns);
             }
         }
 
         // offsets
-        @if ($type == 'offset') {
-            @if ($fisrt-breakpoint == $breakpoint) {
+        @if ($_type == 'offset') {
+            @if ($first-breakpoint == $_breakpoint) {
                 .col-offset-#{$i} {
-                    margin-left: percentage($i / $grid-columns);
+                    margin-left: percentage($i / $_grid-columns);
                 }
             }
 
-            .col-#{$breakpoint}-offset-#{$i} {
-                margin-left: percentage($i / $grid-columns);
+            .col-#{$_breakpoint}-offset-#{$i} {
+                margin-left: percentage($i / $_grid-columns);
             }
         }
     }
@@ -150,14 +152,14 @@
 /**
  * Semantic row
  */
-@mixin grid-row($gutter: true) {
+@mixin grid-row($_gutter: true) {
     display: flex;
     flex: 0 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
 
     // gutter margins
-    @if ($gutter == true) {
+    @if ($_gutter == true) {
         @include grid-row-gutter-margins();
     }
 }
@@ -182,8 +184,8 @@
 /**
  * Semantic columns
  */
-@mixin grid-column($_count) {
-    @include make-grid-columns();
+@mixin grid-column($_count, $_gutter: true, $grid-columns: $grid-columns) {
+    @include make-grid-columns($_gutter);
 
     flex-basis: percentage($_count / $grid-columns);
     max-width: percentage($_count / $grid-columns);
