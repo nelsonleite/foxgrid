@@ -1,4 +1,4 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>Foxgrid</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css"><link rel="stylesheet" href="styles/main.css"><script async defer="defer" src="https://buttons.github.io/buttons.js"></script></head><body><a href="https://github.com/nelsonleite/foxgrid"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a><div class="hero"><div class="row align-center-xxs align-middle-xxs"><div class="col-12"><h1><img src="foxgrid-logo.svg" alt="Foxgrid"></h1><p class="lead"><b>Foxgrid</b> is a responsive, fluid, mobile first grid system based on the flexbox layout.</p><a class="github-button" href="https://github.com/nelsonleite/foxgrid/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download nelsonleite/foxgrid on GitHub">Download</a></div></div></div><article class="container"><h1>Table of contents</h1><nav class="toc"><ul><li><a href="#foxgrid">Foxgrid</a><ul><li><a href="#columns">Columns</a></li><li><a href="#nbreakpoints">Breakpoints</a></li><li><a href="#gutter">Gutter per breakpoint</a></li></ul></li><li><a href="#grid-system">Grid system</a><ul><li><a href="#fluid">Fluid</a></li><li><a href="#nesting-columns">Nesting columns</a></li><li><a href="#offseting-columns">Offseting column</a></li></ul></li><li><a href="#columns-direction">Columns direction</a><ul><li><a href="#reverse">Reverse</a></li><li><a href="#vertical">Vertical</a></li><li><a href="#vertical-reverse">Vertical reverse</a></li></ul></li><li><a href="#reorder-columns">Reorder columns</a><ul><li><a href="#first">First</a></li><li><a href="#last">Last</a></li></ul></li><li><a href="#items-alignment">Items alignment</a><ul><li><a href="#start">Start</a></li><li><a href="#center">Center</a></li><li><a href="#end">End</a></li><li><a href="#top">Top</a></li><li><a href="#middle">Middle</a></li><li><a href="#bottom">Bottom</a></li></ul></li><li><a href="#self-alignment">Self alignment and stretch</a></li><li><a href="#distribution">Distribution</a><ul><li><a href="#space-around">Space around</a></li><li><a href="#space-between">Space between</a></li></ul></li></ul></nav></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="foxgrid">Foxgrid</h1><p>Grids are used for creating page layouts, and Foxgrid works very similarly to the standard float grid, but takes advantage of some feature only possible with flexbox (<a href="http://caniuse.com/#feat=flexbox">Flexbox support</a>).<br>Foxgrid was built in SCSS and the grid follows some rules to work properly:</p><ul><li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or just add the class <code class="inline">.no-gutter-row</code> to remove the negative margin</li><li>Use rows to wrap columns (they're the ones with <code class="inline">display: flex</code>)</li></ul><p>And has the following options fully customizable:</p><h2 id="columns">Columns</h2><p>12 columns by default</p><pre><code><span class="var">$grid-columns:</span> 12 !default;</code></pre><h2 id="breakpoints">Breakpoints</h2><p>6 mobile first breakpoints</p><pre><code><span class="var">$breakpoints:</span> (
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>Foxgrid</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css"><link rel="stylesheet" href="styles/main.css"><script async defer="defer" src="https://buttons.github.io/buttons.js"></script></head><body><a href="https://github.com/nelsonleite/foxgrid"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a><div class="hero"><div class="row align-center-xxs align-middle-xxs"><div class="col-12"><h1><img src="foxgrid-logo.svg" alt="Foxgrid"></h1><p class="lead"><b>Foxgrid</b> is a responsive, fluid, mobile first grid system based on the flexbox layout.</p><a class="github-button" href="https://github.com/nelsonleite/foxgrid/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download nelsonleite/foxgrid on GitHub">Download</a></div></div></div><article class="container"><h1>Table of contents</h1><nav class="toc"><ul><li><a href="#foxgrid">Foxgrid</a><ul><li><a href="#columns">Columns</a></li><li><a href="#nbreakpoints">Breakpoints</a></li><li><a href="#gutter">Gutter per breakpoint</a></li></ul></li><li><a href="#grid-system">Grid system</a><ul><li><a href="#fluid">Fluid</a></li><li><a href="#nesting-columns">Nesting columns</a></li><li><a href="#offseting-columns">Offseting columns</a></li><li><a href="#building-semantically">Building semantically</a></li></ul></li><li><a href="#columns-direction">Columns direction</a><ul><li><a href="#reverse">Reverse</a></li><li><a href="#vertical">Vertical</a></li><li><a href="#vertical-reverse">Vertical reverse</a></li></ul></li><li><a href="#reorder-columns">Reorder columns</a><ul><li><a href="#first">First</a></li><li><a href="#last">Last</a></li></ul></li><li><a href="#items-alignment">Items alignment</a><ul><li><a href="#start">Start</a></li><li><a href="#center">Center</a></li><li><a href="#end">End</a></li><li><a href="#top">Top</a></li><li><a href="#middle">Middle</a></li><li><a href="#bottom">Bottom</a></li></ul></li><li><a href="#self-alignment">Self alignment and stretch</a></li><li><a href="#distribution">Distribution</a><ul><li><a href="#space-around">Space around</a></li><li><a href="#space-between">Space between</a></li></ul></li></ul></nav></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="foxgrid">Foxgrid</h1><p>Grids are used for creating page layouts, and Foxgrid works very similarly to the standard float grid, but takes advantage of some feature only possible with flexbox (<a href="http://caniuse.com/#feat=flexbox">Flexbox support</a>).<br>Foxgrid was built in SCSS and the grid follows some rules to work properly:</p><ul><li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or just add the class <code class="inline">.no-gutter-row</code> to remove the negative margin</li><li>Use rows to wrap columns (they're the ones with <code class="inline">display: flex</code>)</li></ul><p>And has the following options fully customizable:</p><h2 id="columns">Columns</h2><p>12 columns by default</p><pre><code><span class="var">$grid-columns:</span> 12 !default;</code></pre><h2 id="breakpoints">Breakpoints</h2><p>6 mobile first breakpoints</p><pre><code><span class="var">$breakpoints:</span> (
     xxs: '', <span class="comment">// default</span>
     xs: '640px',
     sm: '768px',
@@ -100,7 +100,47 @@ No media query since this is the default */</span>
 &lt;div class="<span class="var">row</span>"&gt;
     &lt;div class="<span class="var">col-4</span>"&gt;&lt;/div&gt;
     &lt;div class="<span class="var"><b>col-offset-4</b> col-4</span>"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><div class="row"><div class="col-offset-3 col-6"><div class="inner">col-6</div></div></div><div class="row"><div class="col-offset-2 col-3"><div class="inner">col-3</div></div><div class="col-3"><div class="inner">col-3</div></div><div class="col-offset-1 col-3"><div class="inner">col-3</div></div></div><div class="row"><div class="col-4"><div class="inner">col-4</div></div><div class="col-offset-4 col-4"><div class="inner">col-4</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="columns-direction">Columns direction</h1><h2 id="reverse">Reverse</h2><p>Add <code class="inline">.reverse</code> to the <code class="inline">.row</code> to invert the order of the columns.</p><pre><code>&lt;div class="<span class="var">row <b>reverse</b></span>"&gt;
+&lt;/div&gt;</code></pre><div class="row"><div class="col-offset-3 col-6"><div class="inner">col-6</div></div></div><div class="row"><div class="col-offset-2 col-3"><div class="inner">col-3</div></div><div class="col-3"><div class="inner">col-3</div></div><div class="col-offset-1 col-3"><div class="inner">col-3</div></div></div><div class="row"><div class="col-4"><div class="inner">col-4</div></div><div class="col-offset-4 col-4"><div class="inner">col-4</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h2 id="building-semantically">Building semantically</h2><p><b>Rows</b><br>Use <code class="inline">grid-row()</code> mixin to define a row.</p><p><b>Columns</b><br>Use <code class="inline">grid-column(*)</code> mixin to create columns.</p><pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row()</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(<b>6</b>)</span>;
+    }
+}</code></pre><pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><div class="main"><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div></div><hr><p><b>Control gutters</b><br>To remove gutters, simple add <code class="inline">false</code> parameter to either <code class="inline">grid-row(false)</code> and <code class="inline">grid-column(*, false)</code>.</p><pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row(<b>false</b>)</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(<b>6</b>, <b>false</b>)</span>;
+    }
+}</code></pre><pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><div class="main-no-gutter"><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div></div><hr><p><b>Control columns count</b><br>To define a grid with a different number of columns, just define <code class="inline">grid-column(* of *)</code>.</p><pre><code><span class="var">.main</span> {
+    @include <span class="var">grid-row()</span>;
+
+    <span class="var">.content</span> {
+        @include <span class="var">grid-column(<b>1 of 15</b>)</span>;
+    }
+}</code></pre><pre><code>&lt;div class="<span class="var">main</span>"&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><div class="main-different-columns"><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div><div class="content"><div class="inner">content</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="columns-direction">Columns direction</h1><h2 id="reverse">Reverse</h2><p>Add <code class="inline">.reverse</code> to the <code class="inline">.row</code> to invert the order of the columns.</p><pre><code>&lt;div class="<span class="var">row <b>reverse</b></span>"&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
@@ -121,81 +161,21 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;</code></pre><div class="row vertical-reverse"><div class="col-12"><div class="inner">1</div></div><div class="col-12"><div class="inner">2</div></div><div class="col-12"><div class="inner">3</div></div><div class="col-12"><div class="inner">4</div></div><div class="col-12"><div class="inner">5</div></div><div class="col-12"><div class="inner">6</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="reorder-columns">Reorder columns</h1><h2 id="first">First</h2><p>Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to either horizontal or vertical directions.</p><pre><code>&lt;div class="<span class="var">row</span>"&gt;
+&lt;/div&gt;</code></pre><div class="row vertical-reverse"><div class="col-12"><div class="inner">1</div></div><div class="col-12"><div class="inner">2</div></div><div class="col-12"><div class="inner">3</div></div><div class="col-12"><div class="inner">4</div></div><div class="col-12"><div class="inner">5</div></div><div class="col-12"><div class="inner">6</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="reorder-columns">Reorder columns</h1><h2 id="first">First</h2><p>Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to both horizontal or vertical directions.</p><pre><code>&lt;div class="<span class="var">row</span>"&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2 <b>col-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;<!--
-
-&lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4 <b>col-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt; --></code></pre><div class="row"><div class="col-2"><div class="inner">1</div></div><div class="col-2"><div class="inner">2</div></div><div class="col-2"><div class="inner">3</div></div><div class="col-2"><div class="inner">4</div></div><div class="col-2"><div class="inner">5</div></div><div class="col-2 col-first"><div class="inner reordered">6</div></div></div><!-- <hr class="mt-10">
-
-        <div class="row vertical">
-            <div class="col-4">
-                <div class="inner">1</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">2</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">3</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">4</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">5</div>
-            </div>
-            <div class="col-4 col-first">
-                <div class="inner reordered">6</div>
-            </div>
-        </div> --><h2 id="last">Last</h2><p>Add <code class="inline">.col-{$breakpoint}-last</code> to easily make the desired column the last (if nor other column has order specified). Applies to either horizontal or vertical directions.</p><pre><code>&lt;div class="<span class="var">row</span>"&gt;
+&lt;/div&gt;</code></pre><div class="row"><div class="col-2"><div class="inner">1</div></div><div class="col-2"><div class="inner">2</div></div><div class="col-2"><div class="inner">3</div></div><div class="col-2"><div class="inner">4</div></div><div class="col-2"><div class="inner">5</div></div><div class="col-2 col-first"><div class="inner reordered">6</div></div></div><h2 id="last">Last</h2><p>Add <code class="inline">.col-{$breakpoint}-last</code> to easily make the desired column the last (if nor other column has order specified). Applies to either horizontal or vertical directions.</p><pre><code>&lt;div class="<span class="var">row</span>"&gt;
     &lt;div class="<span class="var">col-2 <b>col-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;<!--
-
-&lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-4 <b>col-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt; --></code></pre><div class="row"><div class="col-2 col-last"><div class="inner reordered">1</div></div><div class="col-2"><div class="inner">2</div></div><div class="col-2"><div class="inner">3</div></div><div class="col-2"><div class="inner">4</div></div><div class="col-2"><div class="inner">5</div></div><div class="col-2"><div class="inner">6</div></div></div><!-- <hr class="mt-10">
-
-        <div class="row vertical">
-            <div class="col-4 col-last">
-                <div class="inner reordered">1</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">2</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">3</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">4</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">5</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">6</div>
-            </div>
-        </div> --></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="items-alignment">Items alignment</h1><p>If you want the text to follow the alignment, simply add <code class="inline">.align-text</code> to the horizontal alignment class.</p><h2 id="start">Start</h2><p>Add <code class="inline">.align-start-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the start.</p><pre><code>&lt;div class="<span class="var">row <b>align-start-sm align-text</b></span>"&gt;
+&lt;/div&gt;</code></pre><div class="row"><div class="col-2 col-last"><div class="inner reordered">1</div></div><div class="col-2"><div class="inner">2</div></div><div class="col-2"><div class="inner">3</div></div><div class="col-2"><div class="inner">4</div></div><div class="col-2"><div class="inner">5</div></div><div class="col-2"><div class="inner">6</div></div></div></article><!-- ========================================================================================================= --><!-- ========================================================================================================= --><article class="container"><h1 id="items-alignment">Items alignment</h1><p>If you want the text to follow the alignment, simply add <code class="inline">.align-text</code> to the horizontal alignment class.</p><h2 id="start">Start</h2><p>Add <code class="inline">.align-start-{$breakpoint}</code> to the <code class="inline">.row</code> to align the columns to the start.</p><pre><code>&lt;div class="<span class="var">row <b>align-start-sm align-text</b></span>"&gt;
     &lt;div class="<span class="var">col-6</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;
 
