@@ -228,7 +228,7 @@ code {
     @include grid-row();
 
     .content {
-        @include grid-column(6, $grid-columns: 18);
+        @include grid-column(1 of 15);
     }
 }
 

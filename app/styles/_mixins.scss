@@ -184,11 +184,25 @@
 /**
  * Semantic columns
  */
-@mixin grid-column($_count, $_gutter: true, $grid-columns: $grid-columns) {
+@mixin grid-column($col_count, $_gutter: true, $grid-columns: $grid-columns) {
     @include make-grid-columns($_gutter);
 
-    flex-basis: percentage($_count / $grid-columns);
-    max-width: percentage($_count / $grid-columns);
+    // parse number
+    @if type-of($col_count) == 'number' {
+       flex-basis: percentage($col_count / $grid-columns);
+       max-width: percentage($col_count / $grid-columns);
+    }
+
+    // parse "n of n"
+    @else if type-of($col_count) == 'list' {
+        @if length($col_count) != 3 {
+            @error 'Wrong. Use the format "n of n".';
+        }
+        @else {
+            flex-basis: percentage(nth($col_count, 1) / nth($col_count, 3));
+            max-width: percentage(nth($col_count, 1) / nth($col_count, 3));
+        }
+    }
 }
 
 /**

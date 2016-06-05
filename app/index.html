@@ -491,7 +491,7 @@ No media query since this is the default */</span>
     @include <span class="var">grid-row()</span>;
 
     <span class="var">.content</span> {
-        @include <span class="var">grid-column(6)</span>;
+        @include <span class="var">grid-column(<b>6</b>)</span>;
     }
 }</code></pre>
 
@@ -522,10 +522,10 @@ No media query since this is the default */</span>
         </p>
 
 <pre><code><span class="var">.main</span> {
-    @include <span class="var">grid-row(false)</span>;
+    @include <span class="var">grid-row(<b>false</b>)</span>;
 
     <span class="var">.content</span> {
-        @include <span class="var">grid-column(6, false)</span>;
+        @include <span class="var">grid-column(<b>6</b>, <b>false</b>)</span>;
     }
 }</code></pre>
 
@@ -552,14 +552,14 @@ No media query since this is the default */</span>
         <p>
             <b>Control columns count</b>
             <br>
-            To define a grid with a different number of columns, just define <code class="inline">grid-column(*, $grid-columns: *)</code>.
+            To define a grid with a different number of columns, just define <code class="inline">grid-column(* of *)</code>.
         </p>
 
 <pre><code><span class="var">.main</span> {
     @include <span class="var">grid-row()</span>;
 
     <span class="var">.content</span> {
-        @include <span class="var">grid-column(6, $grid-columns: 18)</span>;
+        @include <span class="var">grid-column(<b>1 of 15</b>)</span>;
     }
 }</code></pre>
 
@@ -567,24 +567,36 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
     &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
     &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">content</span>"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="main-different-columns">
-            <div class="content">
-                <div class="inner">
-                    content
-                </div>
-            </div>
-            <div class="content">
-                <div class="inner">
-                    content
-                </div>
-            </div>
-            <div class="content">
-                <div class="inner">
-                    content
-                </div>
-            </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
+            <div class="content"> <div class="inner"> content </div> </div>
         </div>
     </article>
 
