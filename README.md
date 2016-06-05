@@ -8,7 +8,8 @@
 *   [Grid system](#grid-system)
     *   [Fluid](#fluid)
     *   [Nesting columns](#nesting-columns)
-    *   [Offseting column](#offseting-columns)
+    *   [Offseting columns](#offseting-columns)
+    *   [Building semantically](#building-semantically)
 *   [Columns direction](#columns-direction)
     *   [Reverse](#reverse)
     *   [Vertical](#vertical)
@@ -219,6 +220,84 @@ Add `.col-{$breakpoint}-offset-*` to the desired columns to offset them.
 <div class="row">
     <div class="col-xxs-4"></div>
     <div class="col-xxs-offset-4 col-xxs-4"></div>
+</div>
+```
+
+## Building semantically
+
+**Rows**  
+Use `grid-row()` mixin to define a row.
+
+**Columns**  
+Use `grid-column(*)` mixin to create columns.
+
+```scss
+.main {
+    @include grid-row();
+
+    .content {
+        @include grid-column(6);
+    }
+}
+```
+
+```html
+<div class="main">
+    <div class="content"></div>
+    <div class="content"></div>
+</div>
+```
+
+**Control gutters**  
+To remove gutters, simple add `false` parameter to either `grid-row(false)` and `grid-column(*, false)`.
+
+```scss
+.main {
+    @include grid-row(false);
+
+    .content {
+        @include grid-column(6, false);
+    }
+}
+```
+
+```html
+<div class="main">
+    <div class="content"></div>
+    <div class="content"></div>
+</div>
+```
+
+**Control columns count**  
+To define a grid with a different number of columns, just define `grid-column(* of *)`.
+
+```scss
+.main {
+    @include grid-row();
+
+    .content {
+        @include grid-column(1 of 15);
+    }
+}
+```
+
+```html
+<div class="main">
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
+    <div class="content"></div>
 </div>
 ```
 
