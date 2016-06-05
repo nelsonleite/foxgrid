@@ -54,9 +54,9 @@
 
                     <ul>
                         <li> <a href="#fluid">Fluid</a> </li>
-                        <li> <a href="#building-semantically">Building semantically</a> </li>
                         <li> <a href="#nesting-columns">Nesting columns</a> </li>
-                        <li> <a href="#offseting-columns">Offseting column</a> </li>
+                        <li> <a href="#offseting-columns">Offseting columns</a> </li>
+                        <li> <a href="#building-semantically">Building semantically</a> </li>
                     </ul>
                 </li>
                 <li>
@@ -473,6 +473,111 @@ No media query since this is the default */</span>
     <!-- ========================================================================================================= -->
 
     <article class="container">
+        <h2 id="nesting-columns">Nesting columns</h2>
+
+        <p>
+            Rows and columns are infinitely nestable inside other columns.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-12 col-sm-8</span>"&gt;
+        &lt;div class="<span class="var">row</span>"&gt;
+            &lt;div class="<span class="var">col-12 col-sm-8</span>"&gt;&lt;/div&gt;
+            &lt;div class="<span class="var">col-12 col-sm-4</span>"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-12 col-sm-4</span>"&gt;
+        &lt;div class="<span class="var">row</span>"&gt;
+            &lt;div class="<span class="var">col-12 col-sm-6</span>"&gt;&lt;/div&gt;
+            &lt;div class="<span class="var">col-12 col-sm-6</span>"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row no-gutter-row nesting">
+            <div class="col-12 col-sm-8">
+                <div class="row no-gutter-row">
+                    <div class="col-12 col-sm-8">
+                        <div class="inner">col-8</div>
+                    </div>
+                    <div class="col-12 col-sm-4">
+                        <div class="inner">col-4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4">
+                <div class="row no-gutter-row">
+                    <div class="col-12 col-sm-6">
+                        <div class="inner">col-6</div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="inner">col-6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
+    <article class="container">
+        <h2 id="offseting-columns">Offseting columns</h2>
+
+        <p>
+            Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to offset them.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var"><b>col-offset-3</b> col-6</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var"><b>col-offset-2</b> col-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var">col-3</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-offset-1</b> col-3</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-4</span>"&gt;&lt;/div&gt;
+    &lt;div class="<span class="var"><b>col-offset-4</b> col-4</span>"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-offset-3 col-6">
+                <div class="inner">col-6</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-offset-2 col-3">
+                <div class="inner">col-3</div>
+            </div>
+            <div class="col-3">
+                <div class="inner">col-3</div>
+            </div>
+            <div class="col-offset-1 col-3">
+                <div class="inner">col-3</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="inner">col-4</div>
+            </div>
+            <div class="col-offset-4 col-4">
+                <div class="inner">col-4</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ========================================================================================================= -->
+    <!-- ========================================================================================================= -->
+
+    <article class="container">
         <h2 id="building-semantically">Building semantically</h2>
 
         <p>
@@ -604,111 +709,6 @@ No media query since this is the default */</span>
     <!-- ========================================================================================================= -->
 
     <article class="container">
-        <h2 id="nesting-columns">Nesting columns</h2>
-
-        <p>
-            Rows and columns are infinitely nestable inside other columns.
-        </p>
-
-        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-12 col-sm-8</span>"&gt;
-        &lt;div class="<span class="var">row</span>"&gt;
-            &lt;div class="<span class="var">col-12 col-sm-8</span>"&gt;&lt;/div&gt;
-            &lt;div class="<span class="var">col-12 col-sm-4</span>"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-12 col-sm-4</span>"&gt;
-        &lt;div class="<span class="var">row</span>"&gt;
-            &lt;div class="<span class="var">col-12 col-sm-6</span>"&gt;&lt;/div&gt;
-            &lt;div class="<span class="var">col-12 col-sm-6</span>"&gt;&lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-        <div class="row no-gutter-row nesting">
-            <div class="col-12 col-sm-8">
-                <div class="row no-gutter-row">
-                    <div class="col-12 col-sm-8">
-                        <div class="inner">col-8</div>
-                    </div>
-                    <div class="col-12 col-sm-4">
-                        <div class="inner">col-4</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-4">
-                <div class="row no-gutter-row">
-                    <div class="col-12 col-sm-6">
-                        <div class="inner">col-6</div>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <div class="inner">col-6</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <!-- ========================================================================================================= -->
-    <!-- ========================================================================================================= -->
-
-    <article class="container">
-        <h2 id="offseting-columns">Offseting columns</h2>
-
-        <p>
-            Add <code class="inline">.col-{$breakpoint}-offset-*</code> to the desired columns to offset them.
-        </p>
-
-        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var"><b>col-offset-3</b> col-6</span>"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var"><b>col-offset-2</b> col-3</span>"&gt;&lt;/div&gt;
-    &lt;div class="<span class="var">col-3</span>"&gt;&lt;/div&gt;
-    &lt;div class="<span class="var"><b>col-offset-1</b> col-3</span>"&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="<span class="var">row</span>"&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;&lt;/div&gt;
-    &lt;div class="<span class="var"><b>col-offset-4</b> col-4</span>"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-
-        <div class="row">
-            <div class="col-offset-3 col-6">
-                <div class="inner">col-6</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-offset-2 col-3">
-                <div class="inner">col-3</div>
-            </div>
-            <div class="col-3">
-                <div class="inner">col-3</div>
-            </div>
-            <div class="col-offset-1 col-3">
-                <div class="inner">col-3</div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-4">
-                <div class="inner">col-4</div>
-            </div>
-            <div class="col-offset-4 col-4">
-                <div class="inner">col-4</div>
-            </div>
-        </div>
-    </article>
-
-    <!-- ========================================================================================================= -->
-    <!-- ========================================================================================================= -->
-
-    <article class="container">
         <h1 id="columns-direction">Columns direction</h1>
 
         <h2 id="reverse">Reverse</h2>
@@ -829,7 +829,7 @@ No media query since this is the default */</span>
         <h2 id="first">First</h2>
 
         <p>
-            Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to either horizontal or vertical directions.
+            Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to both horizontal or vertical directions.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row</span>"&gt;
@@ -839,16 +839,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2 <b>col-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;<!--
-
-&lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4 <b>col-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt; --></code></pre>
+&lt;/div&gt;</code></pre>
 
         <div class="row">
             <div class="col-2">
@@ -871,29 +862,6 @@ No media query since this is the default */</span>
             </div>
         </div>
 
-        <!-- <hr class="mt-10">
-
-        <div class="row vertical">
-            <div class="col-4">
-                <div class="inner">1</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">2</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">3</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">4</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">5</div>
-            </div>
-            <div class="col-4 col-first">
-                <div class="inner reordered">6</div>
-            </div>
-        </div> -->
-
         <h2 id="last">Last</h2>
 
         <p>
@@ -907,16 +875,7 @@ No media query since this is the default */</span>
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt;<!--
-
-&lt;div class="<span class="var">row vertical</span>"&gt;
-    &lt;div class="<span class="var">col-4 <b>col-last</b></span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
-&lt;/div&gt; --></code></pre>
+&lt;/div&gt;</code></pre>
 
         <div class="row">
             <div class="col-2 col-last">
@@ -938,29 +897,6 @@ No media query since this is the default */</span>
                 <div class="inner">6</div>
             </div>
         </div>
-
-        <!-- <hr class="mt-10">
-
-        <div class="row vertical">
-            <div class="col-4 col-last">
-                <div class="inner reordered">1</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">2</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">3</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">4</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">5</div>
-            </div>
-            <div class="col-4">
-                <div class="inner">6</div>
-            </div>
-        </div> -->
     </article>
 
     <!-- ========================================================================================================= -->
