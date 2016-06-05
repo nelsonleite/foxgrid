@@ -248,8 +248,6 @@ Use `grid-column(*)` mixin to create columns.
 </div>
 ```
 
-* * *
-
 **Control gutters**  
 To remove gutters, simple add `false` parameter to either `grid-row(false)` and `grid-column(*, false)`.
 
@@ -269,8 +267,6 @@ To remove gutters, simple add `false` parameter to either `grid-row(false)` and 
     <div class="content"></div>
 </div>
 ```
-
-* * *
 
 **Control columns count**  
 To define a grid with a different number of columns, just define `grid-column(* of *)`.
