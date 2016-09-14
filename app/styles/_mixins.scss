@@ -72,7 +72,7 @@
  * Mixin to avoid code duplication, once it is used with and
  * without media queries
  */
-@mixin loop-breakpoints() {
+@mixin loop-breakpoints($breakpoint) {
     //
     // width
     //
@@ -86,66 +86,131 @@
     //
     // order
     //
-    .col-#{$breakpoint}-first { order: -1; }
-    .col-#{$breakpoint}-last { order: 1; }
+    @if $breakpoint == $first-breakpoint {
+        .col-first { order: -1; }
+        .col-last { order: 1; }
+    }
+    @else {
+        .col-#{$breakpoint}-first { order: -1; }
+        .col-#{$breakpoint}-last { order: 1; }
+    }
 
     //
     // alignments
     //
-    .align-start-#{$breakpoint} {
-        justify-content: flex-start;
-        &.align-text { text-align: start; }
-    }
-    .align-center-#{$breakpoint} {
-        justify-content: center;
-        &.align-text { text-align: center; }
-    }
-    .align-end-#{$breakpoint} {
-        justify-content: flex-end;
-        &.align-text { text-align: end; }
-    }
+    @if $breakpoint == $first-breakpoint {
+        .align-start {
+            justify-content: flex-start;
+            &.align-text { text-align: start; }
+        }
+        .align-center {
+            justify-content: center;
+            &.align-text { text-align: center; }
+        }
+        .align-end {
+            justify-content: flex-end;
+            &.align-text { text-align: end; }
+        }
 
-    .align-top-#{$breakpoint} { align-items: flex-start; }
-    .align-middle-#{$breakpoint} { align-items: center; }
-    .align-bottom-#{$breakpoint} { align-items: flex-end; }
+        .align-top { align-items: flex-start; }
+        .align-middle { align-items: center; }
+        .align-bottom { align-items: flex-end; }
 
-    .stretch-#{$breakpoint} {
-        align-items: stretch;
+        .stretch {
+            align-items: stretch;
 
-        > [class*="col"] {
-            display: flex;
+            > [class*="col"] {
+                display: flex;
+            }
+        }
+    }
+    @else {
+        .align-start-#{$breakpoint} {
+            justify-content: flex-start;
+            &.align-text { text-align: start; }
+        }
+        .align-center-#{$breakpoint} {
+            justify-content: center;
+            &.align-text { text-align: center; }
+        }
+        .align-end-#{$breakpoint} {
+            justify-content: flex-end;
+            &.align-text { text-align: end; }
+        }
+
+        .align-top-#{$breakpoint} { align-items: flex-start; }
+        .align-middle-#{$breakpoint} { align-items: center; }
+        .align-bottom-#{$breakpoint} { align-items: flex-end; }
+
+        .stretch-#{$breakpoint} {
+            align-items: stretch;
+
+            > [class*="col"] {
+                display: flex;
+            }
         }
     }
 
     //
     // self alignments
     //
-    .align-self-top-#{$breakpoint} {
-        align-self: flex-start;
-    }
+    @if $breakpoint == $first-breakpoint {
+        .align-self-top {
+            align-self: flex-start;
+        }
 
-    .align-self-middle-#{$breakpoint} {
-        align-self: center;
-    }
+        .align-self-middle {
+            align-self: center;
+        }
 
-    .align-self-bottom-#{$breakpoint} {
-        align-self: flex-end;
-    }
+        .align-self-bottom {
+            align-self: flex-end;
+        }
 
-    .self-stretch-#{$breakpoint} {
-        display: flex;
-        align-self: stretch;
+        .self-stretch {
+            display: flex;
+            align-self: stretch;
+        }
+    }
+    @else {
+        .align-self-top-#{$breakpoint} {
+            align-self: flex-start;
+        }
+
+        .align-self-middle-#{$breakpoint} {
+            align-self: center;
+        }
+
+        .align-self-bottom-#{$breakpoint} {
+            align-self: flex-end;
+        }
+
+        .self-stretch-#{$breakpoint} {
+            display: flex;
+            align-self: stretch;
+        }
     }
 
     //
     // distribute
     //
-    .space-around-#{$breakpoint} {
-        justify-content: space-around;
-    }
+    @if $breakpoint == $first-breakpoint {
+        .space-around {
+            justify-content: space-around;
+        }
 
-    .space-between-#{$breakpoint} {
-        justify-content: space-between;
+        .space-between {
+            justify-content: space-between;
+        }
+    }
+    @else {
+        .space-around-#{$breakpoint} {
+            justify-content: space-around;
+        }
+
+        .space-between-#{$breakpoint} {
+            justify-content: space-between;
+        }
     }
 }
 

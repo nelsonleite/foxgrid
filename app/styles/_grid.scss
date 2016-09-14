@@ -87,11 +87,11 @@ $list: remove-nth($list, 1);
 //
 @each $breakpoint, $val in $breakpoints {
     @if $val == '' {
-        @include loop-breakpoints();
+        @include loop-breakpoints($breakpoint);
     }
     @else {
         @media (min-width: #{$val}) {
-            @include loop-breakpoints();
+            @include loop-breakpoints($breakpoint);
         }
     }
 }
