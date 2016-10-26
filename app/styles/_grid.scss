@@ -57,6 +57,8 @@ $list: '';
 
 @each $breakpoint, $val in $breakpoints {
     @if $val == '' {
+        $list: append($list, '.col-auto,', comma);
+
         @for $i from 1 through $grid-columns {
             $list: append($list, '.col-#{$i},', comma);
         }
@@ -65,6 +67,7 @@ $list: '';
     @for $i from 1 through $grid-columns {
         $list: append($list, '.col-#{$breakpoint}-#{$i},', comma);
     }
+    $list: append($list, '.col-#{$breakpoint}-auto,', comma);
 }
 
 $list: remove-nth($list, 1);
@@ -72,8 +75,7 @@ $list: remove-nth($list, 1);
 //
 // common styles
 //
-#{$list},
-.col-auto {
+#{$list} {
     @include make-grid-columns();
 
     // remove gutter

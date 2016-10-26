@@ -171,11 +171,7 @@ No media query since this is the default */</span>
         </p>
         <pre><code><span class="var">$gutter-map:</span> (
     xxs: 10,
-    xs:  10,
-    sm:  30,
-    md:  30,
-    lg:  30,
-    xl:  30
+    sm:  30
 );</code></pre>
         <p>
             and a set of helper variables for standalone usage
@@ -193,6 +189,11 @@ No media query since this is the default */</span>
 
     <article class="container">
         <h1 id="grid-system">Grid system</h1>
+
+        <p>
+            <b>Note:</b> <br>
+            Every time a <code class="inline">col-{$breakpoint}-{*}</code> is used, if the <code class="inline">-{$breakpoint}</code> part is omitted, it's equivalent to the lower breakpoint. For example, <code class="inline">col-auto</code> is the same as <code class="inline">col-xxs-auto</code>.
+        </p>
 
         <p>
             <b>Columns wrapping</b>
@@ -345,7 +346,7 @@ No media query since this is the default */</span>
         <p>
             <b>Auto widths</b>
             <br>
-            Add <code class="inline">.col-auto</code> and columns naturally space themselves equaly to fit the row.
+            Add <code class="inline">.col-{$breakpoint}-auto</code> and columns naturally space themselves equaly to fit the row.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row</span>"&gt;
