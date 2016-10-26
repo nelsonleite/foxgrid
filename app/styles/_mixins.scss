@@ -1,6 +1,6 @@
-/**
- * Base style and gutter for columns
- */
+// /**
+//  * Base style and gutter for columns
+//  */
 @mixin make-grid-columns($_gutter: true) {
     flex: 1 0 auto;
 
@@ -18,28 +18,36 @@
     }
 }
 
-/**
- * Calculate gutter width
- * @param  $property    Property to apply the value
- * @param  $breakpoint
- * @param  $abs         [1, -1] Whether the $property value is positive or negative
- */
-@mixin calc-column-gutter($property, $breakpoint, $abs: 1) {
-    #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
-    #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+// /**
+//  * Calculate gutter width
+//  * @param  $property    Property to apply the value
+//  * @param  $breakpoint
+//  * @param  $abs         [1, -1] Whether the $property value is positive or negative
+//  */
+@mixin calc-column-gutter($property, $breakpoint, $abs: 1, $divisible: true) {
+    @if (map-has-key($gutter-map, $breakpoint)) {
+        @if ($divisible == true) {
+            #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+            #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs) / 2)) + px;
+        }
+        @else {
+            #{$property}-right: floor(((map-get($gutter-map, #{$breakpoint}) * $abs))) + px;
+            #{$property}-left: ceil(((map-get($gutter-map, #{$breakpoint}) * $abs))) + px;
+        }
+    }
 }
 
-/**
- * Calculate properties for each column
- * @param $breakpoint
- * @param $type [width, offset] Property name
- */
-@mixin calc-grid-column($_breakpoint: $first-breakpoint, $_type: 'width', $_grid-columns: $grid-columns) {
+// /**
+//  * Calculate properties for each column
+//  * @param $breakpoint
+//  * @param $type [width, offset] Property name
+//  */
+@mixin calc-grid-column($_breakpoint: $first-breakpoint-key, $_type: 'width', $_grid-columns: $grid-columns) {
     @for $i from 1 through $_grid-columns {
         // width
         @if ($_type == 'width') {
             // first breakpoint: avoid specifying column breakpoint
-            @if ($first-breakpoint == $_breakpoint) {
+            @if ($first-breakpoint-key == $_breakpoint) {
                 .col-#{$i} {
                     flex-basis: percentage($i / $_grid-columns);
                     max-width: percentage($i / $_grid-columns);
@@ -55,7 +63,7 @@
 
         // offsets
         @if ($_type == 'offset') {
-            @if ($first-breakpoint == $_breakpoint) {
+            @if ($first-breakpoint-key == $_breakpoint) {
                 .col-offset-#{$i} {
                     margin-left: percentage($i / $_grid-columns);
                 }
@@ -68,10 +76,10 @@
     }
 }
 
-/**
- * Mixin to avoid code duplication, once it is used with and
- * without media queries
- */
+// /**
+//  * Mixin to avoid code duplication, once it is used with and
+//  * without media queries
+//  */
 @mixin loop-breakpoints($breakpoint) {
     //
     // width
@@ -86,7 +94,7 @@
     //
     // order
     //
-    @if $breakpoint == $first-breakpoint {
+    @if $breakpoint == $first-breakpoint-key {
         .col-first { order: -1; }
         .col-last { order: 1; }
     }
@@ -98,7 +106,7 @@
     //
     // alignments
     //
-    @if $breakpoint == $first-breakpoint {
+    @if $breakpoint == $first-breakpoint-key {
         .align-start {
             justify-content: flex-start;
             &.align-text { text-align: start; }
@@ -154,7 +162,7 @@
     //
     // self alignments
     //
-    @if $breakpoint == $first-breakpoint {
+    @if $breakpoint == $first-breakpoint-key {
         .align-self-top {
             align-self: flex-start;
         }
@@ -194,7 +202,7 @@
     //
     // distribute
     //
-    @if $breakpoint == $first-breakpoint {
+    @if $breakpoint == $first-breakpoint-key {
         .space-around {
             justify-content: space-around;
         }
@@ -214,9 +222,9 @@
     }
 }
 
-/**
- * Semantic row
- */
+// /**
+//  * Semantic row
+//  */
 @mixin grid-row($_gutter: true) {
     display: flex;
     flex: 0 1 auto;
@@ -229,9 +237,9 @@
     }
 }
 
-/**
- * Semantic row margins
- */
+// /**
+//  * Semantic row margins
+//  */
 @mixin grid-row-gutter-margins() {
     // gutter margins
     @each $breakpoint, $val in $breakpoints {
@@ -246,9 +254,9 @@
     }
 }
 
-/**
- * Semantic columns
- */
+// /**
+//  * Semantic columns
+//  */
 @mixin grid-column($col_count, $_gutter: true, $grid-columns: $grid-columns) {
     @include make-grid-columns($_gutter);
 
@@ -270,12 +278,12 @@
     }
 }
 
-/**
- * Removing list value at nth index
- * @param  {list} $list  List to remove the item
- * @param  {list} $index Index for the item to be removed
- * @return {list}        List with the item removed
- */
+// /**
+//  * Removing list value at nth index
+//  * @param  {list} $list  List to remove the item
+//  * @param  {list} $index Index for the item to be removed
+//  * @return {list}        List with the item removed
+//  */
 @function remove-nth($list, $index) {
     $result: null;
 

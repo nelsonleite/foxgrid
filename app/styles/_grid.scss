@@ -4,11 +4,11 @@
 .container {
     @each $breakpoint, $val in $breakpoints {
         @if $val == '' {
-            @include calc-column-gutter('padding', $breakpoint);
+            @include calc-column-gutter('padding', $breakpoint, $divisible: false);
         }
         @else {
             @media (min-width: #{$val}) {
-                @include calc-column-gutter('padding', $breakpoint);
+                @include calc-column-gutter('padding', $breakpoint, $divisible: false);
             }
         }
     }
@@ -77,8 +77,9 @@ $list: remove-nth($list, 1);
     @include make-grid-columns();
 
     // remove gutter
-    .row.no-gutter & {
-        padding: 0;
+    .row.no-gutter > & {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 

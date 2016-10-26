@@ -10,23 +10,13 @@ $breakpoints: (
     lg: '1200px',
     xl: '1600px'
 );
+
+// utilities variables for easy access
 $breakpoint-keys: map-keys($breakpoints);
-$first-breakpoint: nth($breakpoint-keys, 1);
+$first-breakpoint-key: nth($breakpoint-keys, 1);
 
 // different gutters by screen breakpoint
 $gutter-map: (
     xxs: 10,
-    xs:  10,
-    sm:  30,
-    md:  30,
-    lg:  30,
-    xl:  30
+    sm:  30
 );
-
-// helper vars for each gutter
-$gutter-xxs: map-get($gutter-map, xxs);
-$gutter-xs : map-get($gutter-map, xs);
-$gutter-sm : map-get($gutter-map, sm);
-$gutter-md : map-get($gutter-map, md);
-$gutter-lg : map-get($gutter-map, lg);
-$gutter-xl : map-get($gutter-map, xl);
