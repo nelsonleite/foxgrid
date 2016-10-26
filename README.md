@@ -112,6 +112,9 @@ $gutter-xl:  map-get($gutter-map, xl);
 
 # Grid system
 
+**Note**
+Every time a `col-{$breakpoint}-{*} is used, if the `-{$breakpoint} part is omitted, it's equivalent to the lower breakpoint. For example, `col-auto is the same as `col-xxs-auto.
+
 **Columns wrapping**  
 If more than `$grid-columns` columns are placed within a single row, they'll wrap onto a new line, as long as they have defined widths.
 
@@ -134,7 +137,7 @@ Add sizing classes to control individual columns.
 ```
 
 **Auto widths**  
-Add `.col-auto` and columns naturally space themselves equaly to fit the row.
+Add `.col-{$breakpoint}-auto` and columns naturally space themselves equaly to fit the row.
 
 ```html
 <div class="row">
