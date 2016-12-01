@@ -125,6 +125,9 @@
         .col-#{$breakpoint}-first { order: -1; }
         .col-#{$breakpoint}-last { order: 1; }
 
+        // reset order
+        .col-#{$breakpoint}-reset-order { order: 0; }
+
         // order each element individually via data-order
         @for $i from 1 through $grid-columns {
             [data-order-#{$breakpoint}="#{$i}"] {

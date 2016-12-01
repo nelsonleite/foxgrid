@@ -755,31 +755,31 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical</b></span>"&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-4</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">1</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">2</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">3</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">4</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">5</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">6</div>
             </div>
         </div>
@@ -791,31 +791,31 @@ No media query since this is the default */</span>
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical-reverse</b></span>"&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-12</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-6</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row vertical-reverse">
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">1</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">2</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">3</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">4</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">5</div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <div class="inner">6</div>
             </div>
         </div>
@@ -833,13 +833,17 @@ No media query since this is the default */</span>
             Add <code class="inline">.col-{$breakpoint}-first</code> to easily make the desired column the first. Applies to both horizontal or vertical directions.
         </p>
 
+        <p>
+            To reset the previous applied order, add <code class="inline">col-{$breakpoint}-reset-order</code>.
+        </p>
+
         <pre><code>&lt;div class="<span class="var">row</span>"&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
     &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
-    &lt;div class="<span class="var">col-2 <b>col-first</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2 <b>col-first</b> <b>col-md-reset-order</b></span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
         <div class="row">
@@ -858,7 +862,7 @@ No media query since this is the default */</span>
             <div class="col-2">
                 <div class="inner">5</div>
             </div>
-            <div class="col-2 col-first">
+            <div class="col-2 col-first col-md-reset-order">
                 <div class="inner reordered">6</div>
             </div>
         </div>
