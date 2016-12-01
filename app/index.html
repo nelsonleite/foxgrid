@@ -898,6 +898,42 @@ No media query since this is the default */</span>
                 <div class="inner">6</div>
             </div>
         </div>
+
+        <h2 id="individually">Individually</h2>
+
+        <p>
+            Add the attribute <code class="inline">data-order-{$breakpoint}="*"</code> to easily order each column. Note that the <code class="inline">data-order</code> value is according to the grid columns, that is, the maximum value is equal to the <code class="inline">$grid-columns</code>.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="4" data-order-md="6"</b></span>&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="6" data-order-md="4"</b></span>&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="5"</b></span>&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="3"</b></span>&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="2"</b></span>&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>" <span class="var"><b>data-order="1"</b></span>&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-2" data-order="4" data-order-md="6">
+                <div class="inner reordered">1</div>
+            </div>
+            <div class="col-2" data-order="6" data-order-md="4">
+                <div class="inner reordered">2</div>
+            </div>
+            <div class="col-2" data-order="5">
+                <div class="inner reordered">3</div>
+            </div>
+            <div class="col-2" data-order="3">
+                <div class="inner reordered">4</div>
+            </div>
+            <div class="col-2" data-order="2">
+                <div class="inner reordered">5</div>
+            </div>
+            <div class="col-2" data-order="1">
+                <div class="inner reordered">6</div>
+            </div>
+        </div>
     </article>
 
     <!-- ========================================================================================================= -->

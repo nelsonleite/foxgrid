@@ -91,6 +91,7 @@
     }
 }
 
+
 // /**
 //  * Mixin to avoid code duplication, once it is used with and
 //  * without media queries
@@ -112,11 +113,26 @@
     @if $breakpoint == $first-breakpoint-key {
         .col-first { order: -1; }
         .col-last { order: 1; }
+
+        // order each element individually via data-order
+        @for $i from 1 through $grid-columns {
+            [data-order="#{$i}"] {
+                order: $i;
+            }
+        }
     }
     @else {
         .col-#{$breakpoint}-first { order: -1; }
         .col-#{$breakpoint}-last { order: 1; }
+
+        // order each element individually via data-order
+        @for $i from 1 through $grid-columns {
+            [data-order-#{$breakpoint}="#{$i}"] {
+                order: $i;
+            }
+        }
     }
+
 
     //
     // alignments
