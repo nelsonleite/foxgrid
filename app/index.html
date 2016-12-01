@@ -63,6 +63,7 @@
                     <a href="#columns-direction">Columns direction</a>
 
                     <ul>
+                        <li> <a href="#horizontal">Horizontal</a> </li>
                         <li> <a href="#reverse">Reverse</a> </li>
                         <li> <a href="#vertical">Vertical</a> </li>
                         <li> <a href="#vertical-reverse">Vertical reverse</a> </li>
@@ -74,6 +75,7 @@
                     <ul>
                         <li> <a href="#first">First</a> </li>
                         <li> <a href="#last">Last</a> </li>
+                        <li> <a href="#individually">Individually</a> </li>
                     </ul>
                 </li>
                 <li>
@@ -117,6 +119,7 @@
         <ul>
             <li>Rows must be placed within a <code class="inline">.container</code> for proper alignment, or  just add the class <code class="inline">.no-gutter-row</code> to remove the negative margin</li>
             <li>Use rows to wrap columns (they're the ones with <code class="inline">display: flex</code>)</li>
+            <li>All classes with breakpoints in it are also usable without them, which is the same as using the first breakpoint. For example, instead of using <code class="inline">col-xxs-6</code>, <code class="inline">col-6</code> is valid.</li>
         </ul>
         <p>
             And has the following options fully customizable:
@@ -712,10 +715,46 @@ No media query since this is the default */</span>
     <article class="container">
         <h1 id="columns-direction">Columns direction</h1>
 
+        <h2 id="horizontal">Horizontal</h2>
+
+        <p>
+            The default <code class="inline">.row</code> direction.
+        </p>
+
+        <pre><code>&lt;div class="<span class="var">row</span>"&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 1 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 2 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 3 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 4 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 5 </span>&lt;/div&gt;
+    &lt;div class="<span class="var">col-2</span>"&gt;<span class="comment"> 6 </span>&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <div class="row">
+            <div class="col-2">
+                <div class="inner">1</div>
+            </div>
+            <div class="col-2">
+                <div class="inner">2</div>
+            </div>
+            <div class="col-2">
+                <div class="inner">3</div>
+            </div>
+            <div class="col-2">
+                <div class="inner">4</div>
+            </div>
+            <div class="col-2">
+                <div class="inner">5</div>
+            </div>
+            <div class="col-2">
+                <div class="inner">6</div>
+            </div>
+        </div>
+
         <h2 id="reverse">Reverse</h2>
 
         <p>
-            Add <code class="inline">.reverse</code> to the <code class="inline">.row</code> to invert the order of the columns.
+            Add <code class="inline">.reverse-{$breakpoint}</code> to the <code class="inline">.row</code> to invert the order of the columns.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>reverse</b></span>"&gt;
@@ -751,7 +790,7 @@ No media query since this is the default */</span>
         <h2 id="vertical">Vertical</h2>
 
         <p>
-            Add <code class="inline">.vertical</code> to the <code class="inline">.row</code> to display the columns in a vertical flow.
+            Add <code class="inline">.vertical-{$breakpoint}</code> to the <code class="inline">.row</code> to display the columns in a vertical flow.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical</b></span>"&gt;
@@ -787,7 +826,7 @@ No media query since this is the default */</span>
         <h2 id="vertical-reverse">Vertical reverse</h2>
 
         <p>
-            Add <code class="inline">.vertical-reverse</code> to the <code class="inline">.row</code> to display the columns in a reversed vertical flow.
+            Add <code class="inline">.vertical-reverse-{$breakpoint}</code> to the <code class="inline">.row</code> to display the columns in a reversed vertical flow.
         </p>
 
         <pre><code>&lt;div class="<span class="var">row <b>vertical-reverse</b></span>"&gt;

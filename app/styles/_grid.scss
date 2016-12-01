@@ -28,20 +28,43 @@
     //
     // directions
     //
-    &.horizontal {
-        flex-direction: row;
-    }
+    @each $breakpoint, $val in $breakpoints {
+        @if $val == '' {
+            &.horizontal {
+                flex-direction: row;
+            }
 
-    &.reverse {
-        flex-direction: row-reverse;
-    }
+            &.reverse {
+                flex-direction: row-reverse;
+            }
 
-    &.vertical {
-        flex-direction: column;
-    }
+            &.vertical {
+                flex-direction: column;
+            }
 
-    &.vertical-reverse {
-        flex-direction: column-reverse;
+            &.vertical-reverse {
+                flex-direction: column-reverse;
+            }
+        }
+        @else {
+            @media (min-width: #{$val}) {
+                &.horizontal-#{$breakpoint} {
+                    flex-direction: row;
+                }
+
+                &.reverse-#{$breakpoint} {
+                    flex-direction: row-reverse;
+                }
+
+                &.vertical-#{$breakpoint} {
+                    flex-direction: column;
+                }
+
+                &.vertical-reverse-#{$breakpoint} {
+                    flex-direction: column-reverse;
+                }
+            }
+        }
     }
 
     //
